@@ -1,1 +1,79 @@
-Hallo Welt
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>WE - Landingpage</title>
+        <style>
+            body {
+                margin: 0;
+            }
+
+            ul.horizontal {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+            }
+
+            ul.horizontal li {
+                float: left;
+            }
+
+            ul.horizontal li a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+            }
+
+            ul.horizontal li a:hover:not(.active) {
+                background-color: #000;
+            }
+
+            ul.horizontal li a.active {
+                background-color: #1E90FF;
+            }
+
+            footer {
+                background-color: #333;
+                width: 100%;
+                bottom: 0;
+                position: fixed;
+            }
+
+            .center {
+                text-align: center;
+                float: right;
+            }
+
+            #content img {
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 10%;
+                display: block;
+                width: 50%;
+                min-width: 250px;
+            }
+        </style>
+    </head>
+    <body>
+        <nav>
+            <ul class="horizontal">
+                <li><a class="active" href="javascript:void(0)">Home</a></li>
+                <li><a href="javascript:void(0)">Tasks</a></li>
+                <li><a href="javascript:void(0)">About</a></li>
+            </ul>
+        </nav>
+        <div id="content">
+            <img src="./images/progress.png" alt="Work in Progress Image">
+        </div>
+        <footer>
+            <ul class="horizontal center">
+                <li><a href="#">Impressum</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>
