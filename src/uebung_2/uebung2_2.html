@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ü2.2</title>
+		<style>
+			body {
+				overflow-y: hidden;
+			}
+			
+			#toggle {
+				width: 25px;
+				height: 25px;
+			}
+			
+			.control {
+				opacity: 0;
+				width: 100%;
+			}
+			
+			#toggle:checked ~ .frame > .control {
+				opacity: 1;
+				width: 100%
+			}
+			
+			label {
+				font-weight: bold;
+			}
+			
+			.frame {
+				padding: 5px;
+				width: 98%;
+				border: 1px solid grey;
+			}
+		</style>
+	</head>
+	<body>
+		<div>
+			<h1>Übung 2.2</h1>
+		</div>
+		<div>
+			<input type="checkbox" checked id="toggle">
+			<label for="checkbox">hide and show via checkbox</label>
+			<div class="frame">
+				<span class="control"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Hochschule_Bonn-Rhein-Sieg_Wolfgang_G%C3%B6ddertz_Induktion.jpg" alt="H-BRS Haupteingang" width="100%"></span>
+			</div>
+		</div>
+	</body>
+</html>

@@ -4,58 +4,115 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>WE - Landingpage</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
         <style>
             body {
                 margin: 0;
+                font-family: 'Raleway';
             }
 
-            ul.horizontal {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-                overflow: hidden;
-                background-color: #333;
-            }
+            @media screen and (min-width: 900px) {
+                ul.horizontal {
+                    list-style-type: none;
+                    margin: 0;
+                    padding: 0;
+                    overflow: hidden;
+                    background-color: #333;
+                }
 
-            ul.horizontal li {
-                float: left;
-            }
+                ul.horizontal li {
+                    float: left;
+                }
 
-            ul.horizontal li a {
-                display: inline-block;
-                color: white;
-                text-align: center;
-                padding: 14px 16px;
-                text-decoration: none;
-            }
+                ul.horizontal li a {
+                    display: inline-block;
+                    color: white;
+                    text-align: center;
+                    padding: 1em 1em;
+                    text-decoration: none;
+                }
 
-            ul.horizontal li a:hover:not(.active) {
-                background-color: #000;
-            }
+                ul.horizontal li a:hover:not(.active) {
+                    background-color: #000;
+                }
 
-            ul.horizontal li a.active {
-                background-color: #1E90FF;
-            }
+                ul.horizontal li a.active {
+                    background-color: #1E90FF;
+                }
 
-            footer {
-                background-color: #333;
-                width: 100%;
-                bottom: 0;
-                position: fixed;
-            }
+                footer {
+                    background-color: #333;
+                    width: 100%;
+                    bottom: 0;
+                    position: fixed;
+                }
 
-            .center {
-                text-align: center;
-                float: right;
-            }
+                .center {
+                    text-align: center;
+                    float: right;
+                }
 
-            #content img {
-                margin-left: auto;
-                margin-right: auto;
-                margin-top: 10%;
-                display: block;
-                width: 50%;
-                min-width: 250px;
+                .container img {
+                    margin-left: auto;
+                    margin-right: auto;
+                    margin-top: 10%;
+                    display: block;
+                    width: 50%;
+                    min-width: 250px;
+                }
+
+                .container {
+                    display: grid;
+                    width: 100%;
+                    grid-template-columns: 75vw 25vw;
+                    grid-template-rows: calc(100vh - 4em);
+                    grid-template-areas:
+                        "content tasks";
+                    background-color: #ebeae6;
+                }
+
+                .content {
+                    grid-area: content;
+                }
+
+                .sidebar {
+                    background-color: cornflowerblue;
+                    padding: 1rem;
+                    grid-area: tasks;
+                    font-weight: bold;
+                }
+
+                .sidebar h2 {
+                    margin: 0;
+                }
+
+                /* Link Styling */
+                .sidebar a {
+                    outline: none;
+                    text-decoration: none;
+                    padding: 2px 1px 0;
+                }
+
+                .sidebar a:link {
+                    color: #aaa;
+                }
+
+                .sidebar a:visited {
+                    color: darkslateblue;
+                }
+
+                .sidebar a:focus {
+                    border-bottom: 1px solid;
+                }
+
+                .sidebar a:hover {
+                    border-bottom: 1px solid;
+                    color: white;
+                }
+
+                .sidebar a:active {
+                    color: orange;
+                }
             }
         </style>
     </head>
@@ -63,16 +120,28 @@
         <nav>
             <ul class="horizontal">
                 <li><a class="active" href="javascript:void(0)">Home</a></li>
-                <li><a href="javascript:void(0)">Tasks</a></li>
+                <li><a href="javascript:void(0)">Aufgaben</a></li>
+                <li><a href="javascript:void(0)">Sammlung</a></li>
                 <li><a href="javascript:void(0)">About</a></li>
             </ul>
         </nav>
-        <div id="content">
-            <img src="./images/progress.png" alt="Work in Progress Image">
+        <div class="container">
+            <div class="content">
+                <img src="./images/progress.png" alt="Work in Progress Image">
+            </div>
+            <div class="sidebar">
+                <h2>Aufgaben - Lösungen</h2>
+                <ul>
+                    <li><a href="src/uebung_1/uebung1_4.html" target="_blank">Aufgabe 1.4</a></li>
+                    <li><a href="src/uebung_2/uebung2_1.html" target="_blank">Aufgabe 2.1</a></li>
+                    <li><a href="src/uebung_2/uebung2_2.html" target="_blank">Aufgabe 2.2</a></li>
+                    <li><a href="src/uebung_2/uebung2_3.html" target="_blank">Aufgabe 2.3</a></li>
+                </ul>
+            </div>
         </div>
         <footer>
             <ul class="horizontal center">
-                <li><a href="#">Impressum</a></li>
+                <li><a href="https://www.h-brs.de/de/impressum" target="_blank">Impressum</a></li>
             </ul>
         </footer>
     </body>

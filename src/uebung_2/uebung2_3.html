@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="de">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Ü2.3</title>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<style>
+			<!-- table { -->
+				<!-- border-collapse: collapse; -->
+			<!-- } -->
+			
+			<!-- td { -->
+				<!-- border: 1px solid black; -->
+			<!-- } -->
+		
+			body {
+				background-color: #a9d7d1;
+				margin: 0;
+				font-family: 'Raleway';
+				font-weight: 600;
+			}
+			
+			h1, p {
+				text-align: center;
+				margin: 0.5em;
+				margin-top: 0.25em;
+				font-weight: bolder;
+			}
+			
+			h1 {
+				font-size: 40px;
+			}
+			
+			p {
+				margin-bottom: 1em;
+			}
+			
+			#content {
+				margin-left: 3em;
+				margin-right: 3em;
+				padding: 1em;
+				background-color: #fafafa;
+				border: 1px solid #fafafa;
+				border-radius: 5px;
+				font-size: 17px;
+			}
+			
+			input[type=text], input[type=number], input[type=email] {
+				display: inline-block;
+				height: 2.25em;
+				width: 66%;
+				border-radius: 3px;
+				border: 1px solid rgb(227, 227, 227);
+			}
+			
+			input[type=number]::-webkit-inner-spin-button {
+				opacity: 1;
+			}
+			
+			input[type=radio], input[type=checkbox] {
+				margin-bottom: 1em;
+			}
+			
+			select {
+				display: block;
+				height: 2.5em;
+				width: 33%;
+				background-color: rgb(240,240,240);
+				border: 1px solid rgb(223, 223, 223);
+				border-radius: 3px;
+				padding-left: 5px;
+				font-family: 'Raleway';
+				font-weight: bold;
+			}
+			
+			td:first-child {
+				text-align: right;
+				width: 50%;
+				padding-right: 1em;
+				padding-bottom: 1em;
+			}	
+			
+			td:last-child {
+				text-align: left;
+				width: 50%;
+				padding-bottom: 1em;
+			}
+
+			tr:nth-child(n+4) {
+				vertical-align: top;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Survey Form</h1>
+		<div id="content">
+			<p>Let us know how we can improve freeCodeCamp</p>
+			<table width="100%">
+				<tr>
+					<td>* Name:</td>
+					<td><input type="text" placeholder=" Enter your name"></td>
+				</tr>
+				<tr>
+					<td>* Email:</td>
+					<td><input  type="email" placeholder=" Enter your Email"></td>
+				</tr>
+				<tr>
+					<td>* Age:</td>
+					<td><input type="number" placeholder=" Age"></td>
+				</tr>
+				<tr>
+					<td>Which option best describes your current role?</td>
+					<td><select>
+						<option> Student</option>
+						<option> Employee</option>
+						<option> Employer</option>
+						<option> Unemployed</option>
+					</select></td>
+				</tr>
+				<tr>
+					<td>* How likely is that you would recommend<br>freeCodeCamp to a friend?</td>
+					<td>
+						<input type="radio" name="recommend" value="3"> Definitely<br>
+						<input type="radio" name="recommend" value="2"> Maybe<br>
+						<input type="radio" name="recommend" value="1"> Not sure
+					</td>
+				</tr>
+				<tr>
+					<td>What do you like most in FCC:</td>
+					<td>
+						<select>
+							<option disabled selected>Select an option</option>
+							<option> Tutorials</option>
+							<option> Workshops</option>
+							<option> Dev-Talks</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td>Things that should be improved in the future<br>(Check all that apply):</td>
+					<td>
+						<input type="checkbox" id="frontend"><label for="frontend"> Front-end Projects</label><br>
+						<input type="checkbox" id="backend"><label for="frontend"> Back-end Projects</label><br>
+						<input type="checkbox" id="visualization"><label for="frontend"> Data Visualization</label>
+					</td>
+				</tr>
+			</table>
+		</div>		
+	</body>
+</html>
+
+<!--
+	Die größte Schwierigkeit bestand darin die Formularelemente zusammen mit den dazugehörigen Labels jeweils bündig zur Mitte der Seite auszurichten. 
+	Gelöst wurde dies mit Kombination aus einer Tabelle und einigen wenigen CSS-Anweisungen. 
+	Die Inhalte der linken Zellen der Tabelle sollten alle rechtsbündig und die Inhalte der rechten Zellen der Tabelle alle Linksbündig sein. 
+	Dies wurde über td:first/last-child gelöst, was in diesem Fall praktischerweise immer die Linke oder Rechte Zelle anspricht, da es nur 2 Zellen je Zeile gibt. 
+	Weiterhin ist in der Vorlage der Text der ersten drei Label der Formularfelder mittig zum Inputfeld ausgerichtet, während die nächsten 4 bündig zur oberen Kante ausgerichtet sind. 
+	Dies wurde über die CSS-Anweisung tr:nth-child(n+4) gelöst, welche allen Zeilen der Tabelle - ab Zeile 4 - die vertikale Textausrichtung "top" zugewiesen hat.
+-->

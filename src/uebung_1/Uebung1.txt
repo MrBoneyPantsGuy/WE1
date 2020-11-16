@@ -1,0 +1,95 @@
+Aufgabe 1 (WWW):
+Das WWW-Proposal wurde zum Einen abgelehnt, weil es als zu vage galt und zum Anderen,
+weil die Hypertext Community der Meinung war, dass das Konzept des WWW eher ein Rück- als ein Fortschritt gewesen wäre,
+vor allem wegen der sogenannten "Broken Links".
+
+Die Evolvierbarkeit, Offenheit und Denzentralität sind die wichtigsten Eigenschaften, 
+warum das WWW ein so großer Erfolg wurde. 
+Weiterhin war die unabhängige Weiterentwicklung der verschiedenen Technologien (HTTP, HTML, URI) von Vorteil.
+
+Der Preis für die garantierte Verhinderung von Broken Links wäre der Verlust der Dezentralität. 
+Denn um "broken links" verhindern zu können muss es eine zentrale Stelle geben, 
+welche per referentieller Integrität festhält, welche Links gültig sind und welche nicht.
+
+Aufgabe 2 (HTTP):
+Der Server Antwortet mit Status Code 200, sofern der Client-Request erfolgreich verlaufen ist
+und im Body der Nachricht den angefragten Inhalt übermittelt.
+
+Die angeforderte Ressource ist nicht länger unter der angegebenen Adresse erreichbar und 
+wurde dauerhaft auf eine andere Adresse verlegt auf welche als Antwort weitergeleitet wird 
+um diese für den Client erneut abrufbar zu machen.
+
+Der Status Code 400 zählt zu den Client Fehlern und bedeutet, dass der Server die Anfrage des Clients nicht verarbeiten kann, 
+weil diese einen Fehler enthält. Es liegt in diesem Fall am Client eine neue gültige Anfrage zu erzeugen und ggfs. Fehler in der Eingabe zu korrigieren.
+
+Status Code 403 bedeutet, dass der Client nicht dazu befugt ist den angefragten Inhalt angezeigt zu bekommen (fehlende Zugriffsberechtigung). 
+Falls dies eine gewollte Antwort des Webseitenbetreibers ist um den Zugriff auf bestimmte Bereiche zu schützen, kann der Client nichts dagegen tun.
+Falls es sich um eine irrtümliche Restriktion des Servers auf diesen Bereich handelt kann dies auch an den Browsereinstellungen oder auch der Firewall liegen. 
+
+Der Webserver kann die HTTP-Methoden individuell implementieren. 
+Das heißt er könnte die Methode Options als "Cacheable" implementieren und den Client somit ermöglichen die Antwort des 
+Servers bei sich selbst abzuspeichern und diese Art der HTTP-Anfrage zu überspringen.
+
+Aufgabe 3 (HTML-Literatur):
+HTML steht für Hypertext Markup Language und zählt dementsprechend zu den Auszeichnungssprachen. 
+Es wird zur Strukturierung elektronischer Dokumente verwendet und stellt die Grundlage aller Webseiten innerhalb des WWW dar.
+
+Indem man den <ol>-Tag mit <li>-Tags dreifach verschachtelt.
+Beispielsweise so:
+<ol>
+	<li>
+		<ol>
+			<li>
+				<ol>
+					<li>Element 1</li>
+					<li>Element 2</li>
+				</ol>
+			</li>
+			<li>
+				<ol>
+					<li>Element 3</li>
+					<li>Element 4</li>
+				</ol>
+			</li>
+			<li>
+				<ol>
+					<li>Element 5</li>
+					<li>Element 6</li>
+				</ol>
+			</li>
+		</ol>
+	</li>
+</ol>
+
+Eine HTML-Tabelle besteht grundsätzlich aus den Tags <table>, <th>, <tr> und <td>. 
+Der Tag Table sagt aus, dass fortfolgend der Aufbau einer Tabelle beschrieben wird. 
+Dies geschieht über Zeilenreihen (tr = table row), welche wiederum die einzelnen Spalten (td = table data) umschließen. 
+Der <th>-Tag ist eine Sonderform des <td>-Tags und wird für die Kopfspalten der Tabelle verwendet. 
+Alle diese Tags müssen geöffnet und auch wieder geschlossen werden. 
+Minimalaufbau einer Tabelle wäre:
+<table>
+	<tr>
+		<th>Header 1</th>
+		<th>Header 2</th>
+	</tr>
+	<tr>
+		<td>Inhalt 1</td>
+		<td>Inhalt 2</td>
+	</tr>
+</table>
+
+Es sollte der gleiche Zeichensatz (Standard ist UTF8) wie auf dem System verwendet werden und es sollten keine Umlaute/Sonderzeichen in Dateinamen vorkommen, 
+da diese ohnehin nicht innerhalb der URL dargestellt werden können.
+
+Über den Tag <nav> und der Hilfe einer unsortierten Liste (<ul>).
+Beispielsweise so:
+<nav>
+	<ul>
+		<li><a href="insertlinkhere">Item</a></li>
+	</ul>
+</nav>
+		
+Die Attribute src, alt, width und height, wobei "src" die Quelle des Bildes darstellt, also ein Hyperlink auf den Speicherort des Bildes, 
+"alt" einen alternativtext zu dem Bild für Sehgeschädigte oder für den Fall, dass das Bild nicht angezeigt werden kann und "width" und "height" 
+für die Abmessungen des Bildes. Dies kann für eine "fluide" Darstellung auch in Prozent anstatt in absoluten Pixeln angegeben werden.
+

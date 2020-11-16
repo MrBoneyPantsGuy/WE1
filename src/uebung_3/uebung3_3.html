@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+		<style>
+			@media screen and (min-width: 300px){
+				body {
+					margin: 0;
+					text-align: center;
+					font-family: "Raleway";
+					background-color: #ebeae6;
+				}
+
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 100%;
+					grid-template-rows: minmax(220px, 35vh) minmax(100px, 20vh) 45vh 40vh 30vh;
+					grid-template-areas:
+						"header"
+						"headline"
+						"left"
+						"content"
+						"footer";
+					height: calc(160vh);
+					background-color: #ebeae6;
+				}
+
+				.header {
+					background-color: #363636;
+					grid-area: header;
+					font-size: 1em;
+				}
+
+				.headline {
+					grid-area: headline;
+					font-size: 1.5rem;
+					font-weight: bold;
+				}
+
+				.left {
+					grid-area: left;
+					margin-bottom: 1rem;
+					z-index: 100;
+				}
+
+				.content {
+					background-color: #ebeae6;
+					font-weight: bolder;
+					font-size: 1em;
+					align-self: center;
+				}
+
+				.footer {
+					background-color: #011826;
+					color: white;
+					grid-area: footer;
+					padding: 2rem 0 1rem 0;
+					align-self: center;
+					height: calc(100% - 3rem);
+				}
+
+				.button {
+					background-color: #f88e37;
+					color: white;
+					padding: 1rem 2rem 1rem 2rem;
+					border: 1px solid #f88e37;
+					border-radius: 5px;
+				}
+
+				nav ul {
+					list-style-type: none;
+					padding: 0;
+					margin-top: 1rem;
+					display: block;
+				}
+
+				nav ul li {
+					margin: 1rem;
+					display: block;
+					color: white;
+					vertical-align: center;
+					padding: 0.5rem;
+				}
+
+				nav ul li:hover {
+					background-color: #f88e37;
+				}
+
+				img {
+					width: auto;
+					max-height: 100%;
+					object-fit: cover;
+					border: 1px solid #888887;
+					border-radius: 5px;
+					margin: 0;
+				}
+
+				.content p {
+					margin: 1rem;
+				}
+			}
+
+			@media screen and (min-width: 600px){
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 100vw;
+					grid-template-rows: minmax(50px, 6vh) 10vh 35vh 29vh 20vh;
+					grid-template-areas:
+						"header"
+						"headline"
+						"left"
+						"content"
+						"footer";
+					height: calc(100vh);
+					background-color: #ebeae6;
+				}
+
+				.header {
+					background-color: #363636;
+					grid-area: header;
+				}
+				
+				.headline {
+					grid-area: headline;
+					font-size: 3vh;
+					font-weight: bold;
+				}
+				
+				.left {
+					grid-area: left;
+					margin-bottom: 1rem;
+					z-index: 100;
+				}
+
+				.content {
+					background-color: #ebeae6;
+					font-weight: bolder;
+					font-size: 2vh;
+				}
+
+				.footer {
+					background-color: #011826;
+					color: white;
+					grid-area: footer;
+					padding: 2rem 0 1rem 0;
+					align-self: center;
+					height: calc(100% - 3rem);
+				}
+
+				.button {
+					background-color: #f88e37;
+					color: white;
+					padding: 1rem 5rem 1rem 5rem;
+					border: 1px solid #f88e37;
+					border-radius: 5px;
+				}
+				
+				nav ul {
+					list-style-type: none;
+					padding: 0;
+					margin-top: 1rem;
+				}
+
+				nav ul li {
+					margin: 1rem;
+					display: inline;
+					color: white;
+					vertical-align: center;
+				}
+
+				img {
+					width: auto;
+					max-height: 100%;
+					object-fit: cover;
+					border: 1px solid #888887;
+					border-radius: 5px;
+					margin: 0;
+				}
+
+				.content p {
+					margin: 1rem;
+				}
+			}
+
+			@media screen and (min-width: 1200px){
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 40vw 60vw;
+					grid-template-rows: minmax(50px, 6vh) minmax(70px, 10vh) 64vh 20vh;
+					grid-template-areas:
+						"header header"
+						"headline headline"
+						"left content"
+						"footer footer";
+					height: 100vh;
+					background-color: #ebeae6;
+				}
+
+				.header {
+					background-color: #363636;
+					grid-area: header;
+				}
+
+				.headline {
+					grid-area: headline;
+					font-size: 3vh;
+					font-weight: bold;
+				}
+
+				.left {
+					grid-area: left;
+					margin-bottom: 1rem;
+					z-index: 100;
+				}
+
+				.content {
+					background-color: #ebeae6;
+					font-weight: bolder;
+					font-size: 2vh;
+				}
+
+				.footer {
+					background-color: #011826;
+					color: white;
+					grid-area: footer;
+					padding: 2rem 0 1rem 0;
+					align-self: center;
+					height: calc(100% - 3rem);
+				}
+
+				.button {
+					background-color: #f88e37;
+					color: white;
+					padding: 1rem 20% 1rem 20%;
+					border: 1px solid #f88e37;
+					border-radius: 5px;
+				}
+
+				nav ul {
+					list-style-type: none;
+					padding: 0;
+					margin-top: 1rem;
+				}
+
+				nav ul li {
+					margin: 1rem;
+					display: inline;
+					color: white;
+					vertical-align: center;
+				}
+
+				img {
+					width: auto;
+					max-height: 100%;
+					object-fit: cover;
+					border: 1px solid #888887;
+					border-radius: 5px;
+					float: left;
+					margin-left: 3rem;
+				}
+
+				.content p {
+					margin: 4rem;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="header">
+				<nav>
+					<ul>
+						<li>The book series</li>
+						<li>Testimonials</li>
+						<li>The Author</li>
+						<li>Free resources</li>
+					</ul>
+				</nav>
+			</div>
+			<div class="headline"><p>You dont know JavaScript</p></div>
+			<div class="left"><img src="https://kaul.inf.h-brs.de/we/assets/img/landing-img.png"></div>
+			<div class="content">
+				<p>Don't just drift through javascript.</p>
+				<p>Understand how Javascript works.</p>
+				<p>Start your journey through the bumpy side of javascript.</p>
+				<p><button class="button">ORDER YOUR COPY NOW</button></p>
+			</div>
+			<div class="footer">
+				<p>The first ebook in the book series is absolutely free.</p>
+				<button class="button" >FIND OUT MORE ABOUT THIS OFFER</button>
+			</div>
+		</div>
+	</body>
+</html>

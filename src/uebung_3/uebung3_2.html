@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="de">
+	<head>
+		<style>
+			@media screen and (min-width: 320px){
+				body {
+					margin: 0;
+				}
+				
+				::-webkit-scrollbar {
+					display: none;
+				}
+			
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 1fr;
+					grid-template-rows: 1fr 1fr 10fr 1fr;
+					grid-template-areas:
+						"headline"
+						"left"
+						"center"
+						"right";
+					height: 240vh;
+				}
+				
+				.headline {
+					background-color: #ff2500;
+					grid-area: headline;
+				}
+				
+				.left {
+					background-color: #2cee27;
+					grid-area: left;
+				}
+				
+				.center {
+					background-color: #0533ff;
+					grid-area: center;
+				}
+				
+				.right {
+					background-color: #ea3efe;
+					grid-area: right;
+				}
+			}
+
+			@media screen and (min-width: 800px){
+				body {
+					margin: 2rem;
+				}
+				
+				::-webkit-scrollbar {
+					display: none;
+				}
+				
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 1fr 2fr;
+					grid-template-rows: 1fr 10fr 1fr;
+					grid-template-areas:
+						"headline headline"
+						"left center"
+						"right right";
+					height: 240vh;
+				}
+				
+				.headline {
+					background-color: #ff2500;
+					grid-area: headline;
+					margin-bottom: 1rem;
+				}
+				
+				.left {
+					background-color: #2cee27;
+					grid-area: left;
+					margin-right: 0.25rem;
+					margin-bottom: 0.25rem;
+				}
+				
+				.center {
+					background-color: #0533ff;
+					grid-area: center;
+					margin-bottom: 0.25rem;
+				}
+				
+				.right {
+					background-color: #ea3efe;
+					grid-area: right;
+				}
+			}
+
+			@media screen and (min-width: 1200px){
+				body {
+					margin: 2rem 4rem 2rem 4rem;
+				}
+				
+				::-webkit-scrollbar {
+					display: none;
+				}
+				
+				.container{
+					display: grid;
+					width: 100%;
+					grid-template-columns: 1fr 3fr 1fr;
+					grid-template-rows: 1fr 2fr;
+					grid-template-areas:
+						"headline headline headline"
+						"left center right";
+					height: calc(100vh - 5rem);
+				}
+				
+				.headline {
+					background-color: #ff2500;
+					grid-area: headline;
+					margin-bottom: 1rem;
+				}
+				
+				.left {
+					background-color: #2cee27;
+					grid-area: left;
+					margin-right: 0;
+					margin-bottom: 0;
+				}
+				
+				.center {
+					background-color: #0533ff;
+					grid-area: center;
+					margin: 0 1rem 0 1rem;
+				}
+				
+				.right {
+					background-color: #ea3efe;
+					grid-area: right;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="headline"></div>
+			<div class="left"></div>
+			<div class="center"></div>
+			<div class="right"></div>
+		</div>
+	</body>
+</html>
