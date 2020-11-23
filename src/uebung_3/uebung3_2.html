@@ -2,13 +2,9 @@
 <html lang="de">
 	<head>
 		<style>
-			@media screen and (min-width: 320px){
+			@media screen and (min-width: 240px){
 				body {
 					margin: 0;
-				}
-				
-				::-webkit-scrollbar {
-					display: none;
 				}
 			
 				.container{
@@ -45,25 +41,21 @@
 				}
 			}
 
-			@media screen and (min-width: 800px){
+			@media screen and (min-width: 600px){
 				body {
-					margin: 2rem;
-				}
-				
-				::-webkit-scrollbar {
-					display: none;
+					margin: 1rem;
 				}
 				
 				.container{
 					display: grid;
 					width: 100%;
 					grid-template-columns: 1fr 2fr;
-					grid-template-rows: 1fr 10fr 1fr;
+					grid-template-rows: 3fr 6fr 3fr;
 					grid-template-areas:
 						"headline headline"
 						"left center"
 						"right right";
-					height: 240vh;
+					height: calc(100vh - 2rem);
 				}
 				
 				.headline {
@@ -96,10 +88,6 @@
 					margin: 2rem 4rem 2rem 4rem;
 				}
 				
-				::-webkit-scrollbar {
-					display: none;
-				}
-				
 				.container{
 					display: grid;
 					width: 100%;
@@ -108,7 +96,7 @@
 					grid-template-areas:
 						"headline headline headline"
 						"left center right";
-					height: calc(100vh - 5rem);
+					height: calc(100vh - 4rem);
 				}
 				
 				.headline {

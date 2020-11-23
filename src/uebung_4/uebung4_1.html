@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+    <head>
+        <title>Uebung 4.1</title>
+    </head>
+    <body>
+        <script>
+            // 1.
+            function identity(id) {
+                return id;
+            }
+
+            // 2.
+            function identiy_function(param) {
+                return (function identity(param) { return param; });
+            }
+
+            // 3.
+            function add(x,y) {
+                return x+y;
+            }
+
+            function mul(x,y) {
+                return x*y;
+            }
+
+            // 4. addf liefert eine Funktion zurück welche direkt auf einen Folgeparameter angewandt wird
+            function addf(x) {
+                var x = x;
+                return (function add(y) {
+                    return x+y;
+                })
+            }
+
+            function mulf(x) {
+                var x = x;
+                return (function add(y) {
+                    return x*y;
+                })
+            }
+
+            // 5. Nicht sicher, ob das so gedacht war...aber es funktioniert
+            function applyf(operation) {
+                if(operation == add) {
+                    return addf;
+                } else {
+                    return mulf;
+                }
+            }
+
+            // TESTS
+            var myArray = {"test" : [1, 2, 3]};
+            var myString = "test";
+            var myNumber = 29;
+            var myFunc = identiy_function(myArray);
+
+            console.log(identity("test"));
+            console.log(identity(myNumber));
+            console.log(myFunc(myArray));
+            console.log(addf(2)(3));
+
+            console.log(applyf(add)(3)(7));
+            console.log(applyf(mul)(5)(6));
+        </script>
+    </body>
+</html>
