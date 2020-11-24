@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Uebung 4.2</title>
+    </head>
+    <body>
+        <script>
+            var Person = {
+                getName: function() {
+                    return this.name;
+                },
+
+                getCars: function() {
+                    return this.cars;
+                }
+            };
+
+            var Auto = {
+                getName: function() {
+                    return this.name;
+                }
+            };
+
+            var BMW = {
+                __proto__: Auto,
+                name: 'BMW',
+            };
+
+            var AUDI = {
+                __proto__: Auto,
+                name: 'AUDI',
+            };
+
+            var peter = {
+                __proto__: Person,
+                name: 'Peter',
+                cars: [BMW.getName(), AUDI.getName()],
+            };
+
+            var jonas = {
+                __proto__: Person,
+                name: 'Jonas',
+                cars: [BMW.getName()],
+            };
+
+            function conflict(obj) {
+                console.log(obj);
+            }
+
+            console.log(peter.getName())
+            console.log(peter.getCars())
+            console.log(peter)
+            console.log(BMW.getName())
+            conflict(Person);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Uebung 4.4</title>
+    </head>
+    <body>
+        <script>
+            // Testvariablen
+            var relations1 = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
+            var elements1 = ["schlafen", "studieren", "essen", "prüfen"];
+
+            var relations2 = [ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]];
+            var elements2 = ["Hose", "Mantel", "Schuhe", "Pullover", "Socken", "Unterhemd", "Unterhose"];
+
+            var relations3 = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"], ["prüfen", "studieren"]]
+            var elements3 = ["schlafen", "studieren", "essen", "prüfen"];
+
+            // Implementierung der topologischen Sortierung
+            function topsort(relations, elements) {
+                var inDegree = calculate_inDegree(relations, elements)
+                var next = [];
+                var sortierung = [];
+
+                for(key in inDegree) {
+                    if(inDegree[key].degree === 0) {
+                        next.push(key);
+                    }
+                }
+
+                var k = 1; // Zählt die Durchläufe um ggfs. Zyklen zu erkennen
+
+                // Falls es keinen Einstiegspunkt gibt...
+                if(next.length === 0) {
+                    return -2;
+                }
+
+                do {
+                    var current_item = next.pop();
+                    sortierung.push(current_item);
+                    k += 1;
+                    inDegree[current_item].nachfolger.forEach(function(item) {
+                        if(inDegree[item].degree > 1) {
+                            inDegree[item].degree -= 1;
+                        } else {
+                            next.push(item);
+                        }
+                    })
+                } while (next.length !== 0);
+
+                // Zyklus erkannt
+                if(k !== elements.length+1) {
+                    return -1;
+                }
+                return sortierung;
+            }
+
+            // Hilfsfunktion um die Basisdaten (inDegree und Nachfolger der einzelnen Knoten) für die topologische Sortierung zu generieren
+            // Benötigt werden hierfür die vorgegebenen Abhängigkeiten als Array im Parameter relations und die Liste der Elemente als Array im Parameter elements
+            function calculate_inDegree(relations, elements) {
+                var inDegree = {};
+                elements.forEach(function(item) {
+                    inDegree[item] = {name: item, degree: 0, nachfolger: []};
+                })
+
+                relations.forEach(function(items) {
+                    inDegree[items[1]].degree += 1;
+                    if(!inDegree[items[0]].nachfolger.includes(items[1])) {
+                        inDegree[items[0]].nachfolger.push(items[1]);
+                    }
+                })
+
+                return inDegree;
+            }
+            console.log(topsort(relations1, elements1));
+            console.log(topsort(relations2, elements2));
+            console.log(topsort(relations3, elements3));
+
+            var relations_test1 = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
+            var elements_test1 = ["schlafen", "studieren", "essen", "prüfen"];
+
+            var relations_test2 = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"], ["prüfen", "studieren"]];
+            var elements_test2 = ["schlafen", "studieren", "essen", "prüfen"];
+
+            var relations_test3 = [["schlafen", "essen"], ["essen", "trinken"], ["trinken", "schlafen"]];
+            var elements_test3 = ["schlafen", "essen", "trinken"];
+
+            var testresult = ["essen", "schlafen", "studieren", "prüfen"];
+
+            // Test auf Zyklus
+            console.assert(topsort(relations_test2, elements_test2) === -1, "Zyklus nicht korrekt erkannt!");
+
+            // Test für Rückgabe einer Sortierung
+            console.assert(topsort(relations_test1, elements_test1) !== -1, "Sortierung hätte erfolgreich sein sollen!");
+
+            // Test für korrekte Rückgabe einer topologischen Sequenz
+            for(index in testresult) {
+                console.assert(topsort(relations1, elements1)[index] === testresult[index], "Sortierung stimmt nicht überein!");
+            }
+
+            // Test für fehlendes Startelement
+            console.assert(topsort(relations_test3, elements_test3) === -2, "Fehlendes Startelement nicht erkannt!");
+
+        </script>
+    </body>
+</html>
