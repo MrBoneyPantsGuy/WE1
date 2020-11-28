@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 4.3 - Teil 1</title>
+</head>
+<body>
+<script>
+    // Variablen
+    let fibonacci_numbers = {};
+    let LAST_SAFE_FIBONACCI = 0;
+    let LAST_SAFE_MAXVALUE = 0;
+
+    // Fibonacci Funktion mit expliziter Berechnung in O(1)
+    function fibonacci_explizit(n) {
+        return (Math.round((1/Math.sqrt(5)) * (Math.pow(((1 + Math.sqrt(5)) / 2), n) - (Math.pow(((1 - Math.sqrt(5)) / 2), n)))));
+    }
+
+    // Schleife für die ersten 2000 Fibonacci-Zahlen
+    for(let i=1; i<=2000; i++) {
+        fibonacci_numbers[i] = fibonacci_explizit(i);
+
+        if(fibonacci_numbers[i] < Number.MAX_SAFE_INTEGER) {
+            LAST_SAFE_FIBONACCI = i;
+        }
+        if(fibonacci_numbers[i] < Number.MAX_VALUE) {
+            LAST_SAFE_MAXVALUE = i;
+        }
+    }
+
+    // Ausgabe der Ergebnisse
+    console.log(LAST_SAFE_FIBONACCI +": "+ fibonacci_numbers[LAST_SAFE_FIBONACCI])
+    console.log(LAST_SAFE_MAXVALUE +": "+ fibonacci_numbers[LAST_SAFE_MAXVALUE])
+    console.log(fibonacci_numbers);
+</script>
+</body>
+</html>

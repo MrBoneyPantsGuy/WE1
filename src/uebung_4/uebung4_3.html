@@ -23,7 +23,7 @@
     }
 
     for(let i=1; i<=2000; i++) {
-        fibonacci_numbers[i] = fibonacci_folge(i);
+        fibonacci_numbers[i] = fibonacci_explizit(i);
 
         if(fibonacci_numbers[i] < Number.MAX_SAFE_INTEGER) {
             LAST_SAFE_FIBONACCI = i;
@@ -32,13 +32,13 @@
             LAST_SAFE_MAXVALUE = i;
         }
 
-        //console.log(fibonacci_numbers[i]);
+        console.log(fibonacci_numbers[i]);
     }
 
     console.log(LAST_SAFE_FIBONACCI +": "+ fibonacci_numbers[LAST_SAFE_FIBONACCI])
     console.log(LAST_SAFE_MAXVALUE +": "+ fibonacci_numbers[LAST_SAFE_MAXVALUE])
-    console.log(fibonacci_numbers);
-    console.log(fibonacci_numbers[25000]);
+    //console.log(fibonacci_numbers);
+    //console.log(fibonacci_numbers[25000]);
 </script>
 <!--script>
     // Variablen
