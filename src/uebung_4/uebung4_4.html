@@ -17,7 +17,7 @@
             var relations3 = [["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"], ["prüfen", "studieren"]]
             var elements3 = ["schlafen", "studieren", "essen", "prüfen"];
 
-            // Implementierung der topologischen Sortierung
+            // Implementierung der topologischen Sortierung als modifizierte Breitensuche
             function topsort(relations, elements) {
                 var inDegree = calculate_inDegree(relations, elements)
                 var next = [];
@@ -74,7 +74,10 @@
                 return inDegree;
             }
             console.log(topsort(relations1, elements1));
+            var t0 = performance.now();
             console.log(topsort(relations2, elements2));
+            var t1 = performance.now();
+            console.log("Call to doSomething took " + (t1 - t0) + " milliseconds.");
             console.log(topsort(relations3, elements3));
 
             var relations_test1 = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
