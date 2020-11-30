@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 5.2</title>
+</head>
+<body>
+<script>
+    "use strict";
+    class Vorrang {
+        // Constructor is calling all the relevant methods himself
+        constructor(relations) {
+            this._relations = relations;
+            // Try destructuring from readElementsAndInitializeInDegree function inside constructor...
+            [this._elements, this._inDegree] = this.readElementsAndInitializeInDegree();
+            this._topSort = this.sortElements();
+        }
+
+        // Generates a Set of all the unique nodes and initializes the Map inDegree
+        readElementsAndInitializeInDegree() {
+            let uniqueElements = new Set();
+            let inDegree = new Map();
+            this._relations.forEach(tupel => tupel.forEach(element => {
+                if(!uniqueElements.has(element)) {
+                    uniqueElements.add(element);
+                    inDegree.set(element, { degree: 0, follower:[] });
+                }}));
+
+            return [uniqueElements, inDegree];
+        }
+
+        // Calculates the inDegree of all nodes with the given relations
+        calculateInDegree() {
+            this._relations.forEach(tupel => {
+                this._inDegree.get(tupel[1]).degree += 1;
+                if(!this._inDegree.get(tupel[0]).follower.includes(tupel[1])) {
+                    this._inDegree.get(tupel[0]).follower.push(tupel[1]);
+                }
+            })
+        }
+
+        // Sorts the elements with the inDegree object and returns the properly sorted list/array
+        sortElements() {
+            this.calculateInDegree();
+            let next = [];
+            let k = 1; // Counter for cycle detection
+            let sort = new Set();
+
+            for(let node of this._inDegree.keys()) {
+                if(this._inDegree.get(node).degree === 0) next.push(node);
+            }
+
+            if(next.length === 0) {
+                return new Error("No entry node!");
+            } else {
+                do {
+                    let current_item = next.pop();
+                    sort.add(current_item);
+                    k += 1;
+                    this._inDegree.get(current_item).follower.forEach(node => {
+                        if(this._inDegree.get(node).degree > 1) {
+                            this._inDegree.get(node).degree -= 1;
+                        } else {
+                            next.push(node);
+                        }
+                    })
+                } while (next.length !== 0);
+            }
+            if(k !== this._elements.size + 1) {
+                return new Error("Cycle or impossible sort detected!");
+            }
+
+            return sort;
+        }
+
+        // Makes the class iterable and returns one node each iteration in sorted order ascending
+        [Symbol.iterator]() {
+            const sortedElements = Array.from(this._topSort);
+            let i = 0;
+            return {
+                next() {
+                    return {
+                        value: sortedElements[i++],
+                        done: i> sortedElements.length
+                    }
+                }
+            }
+        }
+
+        //TODO: Implement proxy
+
+        // Debugging function to check inDegree
+        getInDegree() {
+            return this._inDegree;
+        }
+
+        // Returns the sorted nodes as a Set
+        toString() {
+            return this._topSort;
+        }
+    }
+
+    const studentsLife = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
+    const dressUp = new Vorrang([ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]])
+
+    for ( const next of studentsLife ){
+        console.log("Iterator: " + next );
+    }
+
+</script>
+</body>
+</html>
