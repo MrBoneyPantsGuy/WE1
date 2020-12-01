@@ -91,11 +91,38 @@
         }
     }
 
+    const studentsLife_test1 = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ];
+
+    const studentsLife_test2 = [ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"], ["prüfen", "studieren"] ];
+
+    const studentsLife_test3 = [ ["schlafen", "essen"], ["essen", "trinken"], ["trinken", "schlafen"] ];
+
+    // Test für Rückgabe einer Sortierung => Check
+    const testResult1 = ["essen", "schlafen", "studieren", "prüfen"];
+    console.assert(new Vorrang(studentsLife_test1).toString() !== new Error("Cycle or impossible sort detected!"), "Sortierung hätte erfolgreich sein sollen!");
+
+    // Test auf Zyklus TODO: Prüfen wie man nach Errors checkt
+    console.assert(new Vorrang(studentsLife_test2).toString() !== testResult1, "Zyklus nicht korrekt erkannt!");
+
+    // Test für fehlendes Startelement TODO: Prüfen wie man nach Errors checkt
+    console.assert(new Vorrang(studentsLife_test3).hasOwnProperty("Error") !== true, "Fehlendes Startelement nicht erkannt!");
+
+    // Test für korrekte Rückgabe einer topologischen Sequenz mit Vorrang.toString() => Check
+    const dressUp = new Vorrang([ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]]).toString();
+    let data = ["Socken", "Unterhose", "Hose", "Schuhe", "Unterhemd", "Pullover", "Mantel"];
+
+    let k_topSort = 0;
+    for(const element of dressUp) {
+        console.assert(element === data[k_topSort++], "Sortierung stimmt nicht überein!");
+    }
+
+    // Test für Iterierbarkeit mittels Generator => Check
     const studentsLife = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
-    const dressUp = new Vorrang([ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]])
+    const testResult2 = ["essen", "schlafen", "studieren", "prüfen"];
+    let k_generator = 0;
 
     for(const node of studentsLife.gen()) {
-        console.log("Generator: "+ node);
+        console.assert(node === testResult2[k_generator++]);
     }
 
 </script>

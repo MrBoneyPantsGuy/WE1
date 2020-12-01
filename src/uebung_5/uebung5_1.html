@@ -160,8 +160,8 @@
     }
 
     let t0 = performance.now();
-    const studentenLeben = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
-    //const studentenLeben = new Vorrang([ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]])
+    //const studentenLeben = new Vorrang([ ["schlafen", "studieren"], ["essen", "studieren"], ["studieren", "prüfen"] ]);
+    const studentenLeben = new Vorrang([ ["Unterhemd", "Pullover"], ["Unterhose", "Hose"], ["Pullover", "Mantel"], ["Hose", "Mantel"], ["Hose", "Schuhe"], ["Socken", "Schuhe"], ["Socken", "Mantel"], ["Schuhe", "Mantel"]])
     let t1 = performance.now();
     console.log("TopSort took " + (t1 - t0) + " milliseconds.");
     console.log(studentenLeben.toString());

@@ -9,8 +9,19 @@
     "use strict";
 
     function deepCopy(struct) {
-        return "TODO";
+        return JSON.stringify( struct, null, 4);
     }
+
+    function deeperCopy(struct) {
+        let copy;
+        Array.isArray(struct) ? console.log("array") :  console.log("obj");
+    }
+
+    const object1 = { "name" : "First", "band" : 66, "column": [1,2,3], "data": {"elements": [{"f": "g"}, {"h": "i"}, {"j": ["k", "l", "m"]}]}};
+    const array1 = [1,2,3];
+    console.log(deepCopy(array1));
+    deeperCopy(array1);
+    deeperCopy(object1);
 </script>
 </body>
 </html>
