@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 6.2</title>
+</head>
+<body>
+    <div id="content"></div>
+</body>
+<script>
+    "use strict";
+
+    async function getData() {
+        let url = 'plagiatsresolution.html'; // fetched from local file in the same directory as the script
+        let response = await fetch(url);
+        let reponseText = await response.text();
+
+        document.getElementById("content").innerHTML = reponseText;
+        return reponseText;
+    }
+
+    function removeTags(str) {
+        if ((str===null) || (str===''))
+            return false;
+        else
+            str = str.toString();
+
+        // Regular expression to identify HTML tags in
+        // the input string. Replacing the identified
+        // HTML tag with a null string.
+        return str.replace( /(<([^>]+)>)/ig, '');
+    }
+
+    function excludeStopwords (element)  {
+        let stopWords =  ["der", "die", "das", "den", "des", "einer", "eine", "eines", "und", "oder", "doch", "weil", "an", "in", "von", "nicht"];
+        return (stopWords.find(word => word.includes(element.toLowerCase())) === undefined);
+    }
+
+    function mostOccurence(object) {
+        return Object.keys(object).sort(function (a, b) {
+            return object[a] - object[b]
+        });
+    }
+
+    (async() => {
+        let wordCounter = {};
+        let data = await getData(); // get the actual data as a string
+        let cleanData = removeTags(data); // remove all <tags> from the string
+        cleanData = cleanData.replace(/(\r\n|\n|\r)/gm, ""); // remove all linebreaks from the string
+        cleanData = cleanData.split(" "); // split the string into single words
+        cleanData = cleanData.filter(x => x.trim()); // remove any whitespace at start and end of the element
+        cleanData = cleanData.filter(excludeStopwords); // remove any stopWords
+        cleanData.forEach(element => { // count occurences of each word
+            wordCounter[element] = wordCounter[element] ? wordCounter[element] + 1 : 1;
+        });
+
+        let words = mostOccurence(wordCounter); // sort words ascending
+        console.log(Object.values(words).slice(Object.values(wordCounter).length-3)); // return the last 3 elements
+    })();
+
+</script>
+</html>
