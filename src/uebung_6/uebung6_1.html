@@ -6,6 +6,111 @@
 </head>
 <body>
 <script>
+    // 1. identity_function
+    const identity = x => x;
+
+    // 2. addf
+    const add = ( x, y ) => x + y;
+    const mul = ( x, y ) => x * y;
+    const addf = x => y => x + y;
+    console.assert(add(2,3) === 5);
+    console.assert(mul(3,5) === 15);
+    console.assert(addf(3)(5) === 8);
+
+    // 3. applyf
+    const applyf = f => x => y => f(x,y);
+    console.assert(applyf(mul)(5)(6) === 30);
+    console.assert(applyf(add)(5)(7) === 12);
+
+    // 4. curry
+    const curry = (f,x) => y => f(x,y);
+    console.assert(curry(mul, 5)(6));
+
+    // 5. inc
+    const inc1 = x => addf(x)(1);
+    const inc2 = x => applyf(add)(x)(1);
+    const inc3 = x => curry(add, x)(1);
+    console.assert(inc1(3) === 4);
+    console.assert(inc2(4) === 5);
+    console.assert(inc3(5) === 6);
+
+    // 6. methodize
+    function methodize(f){
+        return function(x){
+            return f(this, x);
+        }
+    }
+    Number.prototype.add = methodize(add);
+    console.assert((3).add(4) === 7);
+
+    // 7. demethodize
+    function demethodize(f){
+        return function (x, y){
+            return f.call(x,y);
+        }
+    }
+    console.assert(demethodize(Number.prototype.add)(5, 6) === 11);
+
+    // 8. twice
+    const twice = f => x => f(x,x);
+    const double = twice(add);
+    const square = twice(mul);
+    console.assert(double(11) === 22);
+    console.assert(square(3) === 9);
+    console.assert(twice(mul)(11) === 121);
+
+    // 9. composeu
+    const composeu = ( f1, f2 ) => x => f2( f1( x ) );
+    console.assert(composeu(double, square)(3) === 36);
+
+    // 10. composeb
+    const composeb = ( f1, f2 ) => ( x,y,z ) => f2( f1( x,y ),z );
+    console.assert(composeb(add, mul)(2, 3, 5) === 25);
+
+    // 11. once
+    const once = f => {
+        let first_call = true;
+        return function ( x,y ) {
+            if( first_call ) {
+                first_call = false;
+                return f( x,y );
+            } else {
+                return new Error( "Can only be called once!" );
+            }
+        }
+    }
+
+    let add_once = once(add);
+    console.assert(add_once(3,4) === 7);
+    console.assert(add_once(3,4) !== 7);
+    console.assert(add_once(3,4) == "Error: Can only be called once!");
+
+    // 12. counterf
+    // Die Klammern um den Teil nach x=> ... sorgen dafür, dass dieser als Ausdruck interpretiert und ausgewertet wird
+    const counterf = x => ({ inc: () => ++x, dec: () => --x });
+    counter = counterf(10);
+    console.assert(counter.inc() === 11);
+    console.assert(counter.inc() === 12);
+    console.assert(counter.dec() === 11);
+    console.assert(counter.dec() === 10);
+
+    // 13. revocable
+    const revocable = f =>  {
+        let revoked = false;
+        return ({invoke: x => revoked ? new Error("Function was revoked!") : f(x), revoke: () => revoked = true});
+    }
+    let temp = revocable(alert);
+    //temp.invoke(7) // führt zu alert(7);
+    //temp.revoke();
+    //console.assert(temp.invoke(8) == "Error: Function was revoked!" ); // Fehlerabbruch!
+
+    // 14. Wrapper
+    const vector  = x => ({ get: index => x[index], append: element => x.push(element), store: (index, element) => x[index] = element });
+    my_vector = vector([]); // ohne Übergabe eines leeren Arrays tritt ein Fehler auf
+    my_vector.append(7);
+    my_vector.store(1, 8);
+    console.assert(my_vector.get(0) === 7);
+    console.assert(my_vector.get(1) === 8);
 
 </script>
 </body>
