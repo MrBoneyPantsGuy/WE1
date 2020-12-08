@@ -15,20 +15,12 @@
         let response = await fetch(url);
         let reponseText = await response.text();
 
-        document.getElementById("content").innerHTML = reponseText;
+        document.getElementById("content").innerHTML = reponseText; // display HTML structure on screen inside content area
         return reponseText;
     }
 
     function removeTags(str) {
-        if ((str===null) || (str===''))
-            return false;
-        else
-            str = str.toString();
-
-        // Regular expression to identify HTML tags in
-        // the input string. Replacing the identified
-        // HTML tag with a null string.
-        return str.replace( /(<([^>]+)>)/ig, '');
+        return ((str===null) || (str==='')) ? false : str.toString().replace( /(<([^>]+)>)/ig, ''); // replace HTML-Tags in string with nothing ("")
     }
 
     function excludeStopwords (element)  {
@@ -44,18 +36,17 @@
 
     (async() => {
         let wordCounter = {};
-        let data = await getData(); // get the actual data as a string
-        let cleanData = removeTags(data); // remove all <tags> from the string
-        cleanData = cleanData.replace(/(\r\n|\n|\r)/gm, ""); // remove all linebreaks from the string
-        cleanData = cleanData.split(" "); // split the string into single words
-        cleanData = cleanData.filter(x => x.trim()); // remove any whitespace at start and end of the element
-        cleanData = cleanData.filter(excludeStopwords); // remove any stopWords
-        cleanData.forEach(element => { // count occurences of each word
-            wordCounter[element] = wordCounter[element] ? wordCounter[element] + 1 : 1;
-        });
-
-        let words = mostOccurence(wordCounter); // sort words ascending
-        console.log(Object.values(words).slice(Object.values(wordCounter).length-3)); // return the last 3 elements
+        let data = await getData();                             // get the actual data as a string
+        let cleanData = removeTags(data);                       // remove all <tags> from the string
+        cleanData = cleanData.replace(/(\r\n|\n|\r)/gm, "");    // remove all linebreaks from the string
+        cleanData.split(" ")                                    // split the string into single words as array
+                .filter(x => x.trim())                          // remove any whitespace at start and end of the element
+                .filter(excludeStopwords)                       // remove any stopWords
+                .forEach(element => {                           // count occurences of each word
+                    wordCounter[element] = wordCounter[element] ? wordCounter[element] + 1 : 1;
+                });
+        let words = mostOccurence(wordCounter);                 // sort words ascending
+        console.log(Object.values(words).slice(Object.values(wordCounter).length-3)); // return the last 3 elements of most occurring words
     })();
 
 </script>
