@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 7.1</title>
+    <style>
+        .styled-table {
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            font-family: sans-serif;
+            min-width: 400px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .styled-table thead tr {
+            background-color: #009879;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+
+        }
+        .styled-table th:first-child {
+            border-top-left-radius: 10px;
+        }
+        .styled-table th:last-child {
+            border-top-right-radius: 10px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f3f3f3;
+        }
+
+        .styled-table tbody tr:last-of-type {
+            border-bottom: 2px solid #009879;
+        }
+    </style>
+</head>
+<body>
+    <h1>Performanzmessungen</h1>
+    <h2>Lesen</h2>
+    <div id="test_read">
+        This element contains <code>code</code>
+        <p><strong>and HTML tags</strong></p>
+    </div>
+    <h2>Schreiben</h2>
+    <div id="test_write"></div>
+    <table id="results" class="styled-table">
+        <thead>
+            <tr>
+                <th>Name des Tests</th>
+                <th>Lesen</th>
+                <th>Schreiben</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</body>
+<script>
+    const test_read = document.getElementById("test_read");
+    const test_write = document.getElementById("test_write");
+    const tbody = document.getElementById("tbody");
+    const node = (name) => document.createTextNode(name);
+    const reader = console.log;
+
+    // Takes an array of arguments and creates a new row inside the tbody containing cells for each of them
+    const addRow = (data) => {
+        let newRow = tbody.insertRow();
+        data.forEach(text => {
+            let newCell = newRow.insertCell();
+            let newText = node(text);
+            newCell.appendChild(newText);
+        })
+    }
+
+    const checkTimeRead = f => (param) => {
+       let start = performance.now();
+       f(param);
+       let end = performance.now();
+
+       return end-start;
+    }
+
+    const checkTimeWrite = (action, element, param) => {
+        let start, end;
+        switch (action) {
+            case "innerHTML":
+                start = performance.now();
+                element.innerHTML = param;
+                end = performance.now();
+                break;
+            case "innerText":
+                start = performance.now();
+                element.innerText = param;
+                end = performance.now();
+                break;
+            case "textContent":
+                start = performance.now();
+                element.textContent = param;
+                end = performance.now();
+                break;
+            case "outerHTML":
+                start = performance.now();
+                element.outerHTML = param;
+                end = performance.now();
+                break;
+            default:
+                start = performance.now();
+                element.innerHTML = param;
+                end = performance.now();
+                break;
+        }
+        return end - start ;
+    }
+
+    // innerHTML (calls HTML parser)
+    const result1r = checkTimeRead(reader)(test_read['innerHTML']);
+    const result1w = checkTimeWrite("innerHTML",test_write,"This element contains <code>code</code>\n" + "<p><strong>and HTML tags and some other text</strong></p>");
+    addRow(["InnerHTML", result1r, result1w]);
+
+    // innerText
+    const result2r = checkTimeRead(reader)(test_read['innerText']);
+    const result2w = checkTimeWrite("innerText", test_write, "This element contains <code>code</code>\n" + "<p><strong>and HTML tags and some other text</strong></p>");
+    addRow(["InnerText", result2r, result2w]);
+
+    // textContent (no tags, not aware of style)
+    const result3r = checkTimeRead(reader)(test_read['textContent']);
+    const result3w = checkTimeWrite("textContent", test_write, "This element contains <code>code</code>\n" + "<p><strong>and HTML tags and some other text</strong></p>");
+    addRow(["textContent", result3r, result3w]);
+
+    // outerHTML (calls HTML parser, but also includes outer tags)
+    const result4r = checkTimeRead(reader)(test_read['outerHTML']);
+    const result4w = checkTimeWrite("outerHTML", test_write, "This element contains <code>code</code>\n" + "<p><strong>and HTML tags and some other text</strong></p>");
+    addRow(["outerHTML", result4r, result4w]);
+
+</script>
+</html>
