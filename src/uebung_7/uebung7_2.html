@@ -2,10 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Uebung 7.2</title>
-    <script src="functions.js"></script>
+    <title>Rednerliste</title>
+    <style>
+        #list-container ul li name, time {
+            margin-right: 0.5em;
+            margin-left: 0.5em;
+        }
+
+        #input-container label, #add, #newPerson {
+            margin-right: 0.5em;
+        }
+
+        .action_button {
+            width: 5em;
+        }
+    </style>
 </head>
 <body>
+    <h1>Rednerliste</h1>
+    <div id="input-container">
+        <label for="newPerson">Neuer Redner:</label>
+        <input type="text" id="newPerson" placeholder="Name des Redners">
+        <input type="button" id="add" value="Hinzufügen">
+    </div>
+    <ul id="list">
 
+    </ul>
 </body>
+<script src="functions.js"></script>
 </html>
