@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 8.2 Promises</title>
+    <script>
+        "use strict"
+
+        const concatenator = async (fileA, fileB) => {
+            let fileContentA = await fetch(fileA).then(result => result.text()).then(content => content.split("\n"));
+            let fileContentB = await fetch(fileB).then(result => result.text()).then(content => content.split("\n"));
+
+            let printer = document.getElementById("concatenation");
+            let merged = [];
+            let counter = (fileContentA.length >= fileContentB.length) ? fileContentA.length : fileContentB.length;
+
+            for(let i=0; i < counter; i++) {
+                merged.push((fileContentA[i] || "").trim() + (fileContentB[i] || "").trim());
+            }
+
+            merged = merged.join("\n");
+            printer.innerText = merged;
+        }
+
+        concatenator("A.txt", "B.txt");
+    </script>
+</head>
+<body>
+    <div id="concatenation"></div>
+</body>
+</html>

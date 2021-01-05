@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Uebung 8.1 Promises</title>
+    <script>
+        "use strict"
+
+        const fileReader = (file) => new Promise((resolve, reject) => {
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        return reject("Error finding/reading the file!");
+                    }
+                    return response.blob();
+                })
+                .then(res => resolve(res.text()));
+        });
+
+        const concatenator = (file1, file2) => {
+            let lineA = fileReader(file1).then(file => file.split("\n"));
+            let lineB = fileReader(file2).then(file => file.split("\n"));
+
+            Promise.allSettled([lineA, lineB]).then( ([resultA, resultB]) => {
+                let printer = document.getElementById("concatenation");
+                let merged = [];
+                let counter = (resultA.value.length >= resultB.value.length) ? resultA.value.length : resultB.value.length;
+
+                for(let i=0; i < counter; i++) {
+                    merged.push((resultA.value[i] || "").trim() + (resultB.value[i] || "").trim());
+                }
+
+                merged = merged.join("\n");
+                printer.innerText = merged;
+            })
+        }
+
+        concatenator("A.txt", "B.txt");
+    </script>
+</head>
+<body>
+    <div id="concatenation"></div>
+</body>
+</html>
