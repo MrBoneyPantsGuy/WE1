@@ -1,0 +1,220 @@
+@media screen and (min-width: 600px) {
+    body {
+        margin: 0;
+        font-family: "Raleway";
+        background-color: #ebeae6;
+    }
+
+    .button, .subbutton {
+        color: #494949 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: larger;
+        background: #ffffff;
+        padding: 15px;
+        border: 4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        border-radius: 25px;
+    }
+
+    .subbutton {
+        width: 90%;
+    }
+
+    .button:hover, .subbutton:hover, .selected {
+        color: #ffffff !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+    }
+
+    #container {
+        display: grid;
+        width: 100vw;
+        height: calc(100vh);
+        grid-template-columns: 35vw 65vw;
+        grid-template-rows: minmax(15vh, 25vh) minmax(45vh, 60vh) 17vh 8vh;
+        grid-template-areas:
+            "header header"
+            "left content"
+            "right right"
+            "footer footer";
+        background-color: #ebeae6;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul li, .footer ul li {
+        margin: 1rem;
+        display: inline;
+        color: white;
+        vertical-align: center;
+    }
+
+    .menu_left ul {
+        list-style-type: none;
+        padding-left: 0.5rem;
+    }
+
+    .menu_left ul li {
+        margin-top: 1rem;
+    }
+
+    .header {
+        background-color: #011826;
+        width: 100%;
+        height: 100%;
+        grid-area: header;
+        text-align: center;
+    }
+
+    .menu_left {
+        background-color: #1E90FF;
+        grid-area: left;
+    }
+
+    .content {
+        background-color: #a9d7d1;
+        grid-area: content;
+        padding: 1rem;
+    }
+
+    .menu_right {
+        background-color: #009879;
+        grid-area: right;
+        width: calc(100% - 2rem);
+        padding-right: 2rem;
+    }
+
+    .footer {
+        background-color: #363636;
+        grid-area: footer;
+        text-align: center;
+        align-self: center;
+        height: 100%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    body {
+        margin: 0;
+        font-family: "Raleway";
+        background-color: #ebeae6;
+    }
+
+    .button, .subbutton {
+        color: #494949 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: larger;
+        background: #ffffff;
+        padding: 18px;
+        border: 4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        border-radius: 25px;
+    }
+
+    .subbutton {
+        width: 90%;
+    }
+
+    .button:hover, .subbutton:hover, .selected {
+        color: #ffffff !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+    }
+
+    #container {
+        display: grid;
+        width: 100vw;
+        height: calc(100vh);
+        grid-template-columns: 15vw 50vw 35vw;
+        grid-template-rows: minmax(125px, 15vh) 77vh minmax(3vh, 8vh);
+        grid-template-areas:
+            "header header header"
+            "left content right"
+            "footer footer footer";
+        background-color: #ebeae6;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul li, .footer ul li {
+        margin: 1rem;
+        display: inline;
+        color: white;
+        vertical-align: center;
+        -webkit-column-break-inside: avoid;
+        page-break-inside: avoid;
+        break-inside: avoid;
+        width: 170px;
+    }
+
+    .menu_left ul {
+        list-style-type: none;
+        padding-left: 0.5rem;
+    }
+
+    .menu_left ul li {
+        margin-top: 1rem;
+    }
+
+    .header {
+        background-color: #011826;
+        width: 100%;
+        height: 100%;
+        grid-area: header;
+        text-align: center;
+    }
+
+    .menu_left {
+        background-color: #1E90FF;
+        grid-area: left;
+    }
+
+    .content {
+        background-color: #a9d7d1;
+        grid-area: content;
+        padding: 1rem;
+    }
+
+    .menu_right {
+        background-color: #009879;
+        grid-area: right;
+        width: calc(100% - 2rem);
+        padding-right: 2rem;
+    }
+
+    .footer {
+        background-color: #363636;
+        grid-area: footer;
+        height: 100%;
+    }
+}
