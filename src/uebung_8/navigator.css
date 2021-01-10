@@ -1,7 +1,121 @@
+@media screen and (min-width: 200px) {
+    body {
+        margin: 0;
+        font-family: "Raleway";
+        font-size: small;
+        background-color: #ebeae6;
+        overflow-x: hidden;
+    }
+
+    .button, .subbutton {
+        color: #494949 !important;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: medium;
+        background: #ffffff;
+        padding: 5px;
+        border: 4px solid #494949 !important;
+        display: inline-block;
+        transition: all 0.4s ease 0s;
+        border-radius: 25px;
+    }
+
+    .subbutton {
+        width: 90%;
+    }
+
+    .button:hover, .subbutton:hover, .selected {
+        color: #ffffff !important;
+        background: #f6b93b;
+        border-color: #f6b93b !important;
+        transition: all 0.4s ease 0s;
+    }
+
+    #container {
+        display: grid;
+        width: 100vw;
+        height: calc(150vh);
+        grid-template-columns: 35vw 65vw;
+        grid-template-rows: minmax(15vh, 25vh) minmax(45vh, 70vh) 27vh 28vh;
+        grid-template-areas:
+            "header header"
+            "left content"
+            "right right"
+            "footer footer";
+        background-color: #ebeae6;
+        overflow-wrap: break-word;
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
+    h1 {
+        color: white;
+        margin: 0;
+    }
+
+    nav ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 1rem;
+    }
+
+    nav ul li, .footer ul li {
+        margin: 1rem;
+        display: inline;
+        color: white;
+        vertical-align: center;
+    }
+
+    .menu_left ul {
+        list-style-type: none;
+        padding-left: 0.5rem;
+    }
+
+    .menu_left ul li {
+        margin-top: 1rem;
+    }
+
+    .header {
+        background-color: #011826;
+        width: 100%;
+        height: 100%;
+        grid-area: header;
+        text-align: center;
+    }
+
+    .menu_left {
+        background-color: #1E90FF;
+        grid-area: left;
+    }
+
+    .content {
+        background-color: #a9d7d1;
+        grid-area: content;
+        padding: 1rem;
+    }
+
+    .menu_right {
+        background-color: #009879;
+        grid-area: right;
+        width: calc(100% - 2rem);
+        padding-right: 2rem;
+    }
+
+    .footer {
+        background-color: #363636;
+        grid-area: footer;
+        text-align: center;
+        align-self: center;
+        height: 100%;
+    }
+
+}
+
 @media screen and (min-width: 600px) {
     body {
         margin: 0;
         font-family: "Raleway";
+        font-size: medium;
         background-color: #ebeae6;
     }
 
