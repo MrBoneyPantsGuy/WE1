@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue.js</title>
+    <style>
+        .output, .input {
+            width: 400px;
+            height: 20px;
+        }
+
+        .box {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="my-component">
+        <input-reader></input-reader>
+    </div>
+    <div id="my-component2">
+        <input-reader></input-reader>
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+<script>
+    // Define a new component called input-reader
+    Vue.component('input-reader', {
+        data: function () {
+            return {
+                value: '',
+                letters: 0,
+                spaces: 0,
+                words: 0,
+                output: ''
+            }
+        },
+        methods: {
+            calc:  function () {
+                this.letters = this.value.length;
+                this.words = this.value.trim().split(' ').length;
+                this.spaces = this.value.split(' ').length - 1;
+                this.output = "Anzahl Buchstaben: " + this.letters + " Anzahl Leerzeichen: " + this.spaces + " Anzahl Wörter: " + this.words;
+            }
+        },
+        template: '<div class="box"><label>Input: </label><input v-model="value" @keyup="calc" class="input"></input><label></br>First: </label><input v-bind:value="output" class="output" readonly></input><label></br>Second: </label><input v-bind:value="output" class="output" readonly></input></div>'
+    })
+    new Vue({ el: '#my-component' })
+    new Vue({ el: '#my-component2' })
+</script>
+</body>
+</html>
