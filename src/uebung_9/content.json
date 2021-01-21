@@ -1,0 +1,88 @@
+{
+  "html": {
+    "headings": {
+      "content": "Die Überschriftenelemente bestehen aus sechs verschiedenen Leveln. <h1> ist die Überschrift mit der höchsten Gewichtung und <h6> mit der kleinsten. Ein Überschriften-Element beschreibt das Thema des Bereiches, welcher der Überschrift folgt. Überschriften können auch verwendet werden, um ein Inhaltsverzeichnis für ein Dokument automatisch zu erstellen.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
+      ]
+    },
+    "HTML5 Tags": {
+      "content": "Mit HTML5 wurden einige neue standardisierte Tags innerhalb HTML eingeführt. Darunter beispielsweise <section>, <nav>, <footer> oder gar Tags für eingebettete Inhalte wie <video>, <audio> oder <map>.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list"
+      ]
+    },
+    "paragraph": {
+      "content": "Das <p>-Element erzeugt einen Absatz, den zusammenhängenden Abschnitt eines längeren Textes. In HTML kann <p> jedoch für jedwede Art von zu gruppierendem, zusammenhängendem Inhalt genutzt werden, zum Beispiel Bilder oder Formularfelder.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/HTML/Element/p"
+      ]
+    }
+  },
+  "css": {
+    "selectors": {
+      "content": "Selektoren definieren, auf welche Elemente eine Reihe von CSS Regeln angewendet wird.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/CSS/CSS_Selectors", "https://www.fabriziovanmarciano.com/button-styles"
+      ]
+    },
+    "flexbox": {
+      "content": "Flexbox ist eine moderne und einfache Möglichkeit, responsive und flexible Layouts zu erstellen, ohne feste Größenangaben und weitere CSS-Einstellungen wie position, float oder clear nutzen zu müssen.\n\nDabei kann nicht nur die Größendarstellung, sondern auch die Reihenfolge der Elemente unabhängig vom HTML-Code durch CSS festgelegt werden.",
+      "references": [
+        "https://wiki.selfhtml.org/wiki/CSS/Tutorials/Flexbox"
+      ]
+    },
+    "grid": {
+      "content": "Mit dem Grid Layout Module ist es möglich, responsive zweidimensionale Layouts zu erstellen. Dabei wird ein Raster angelegt, indem sich die Kindelemente ohne feste Größenangaben und weitere CSS-Einstellungen wie position, float oder clear bequem und flexibel positionieren (lassen).",
+      "references": [
+        "https://wiki.selfhtml.org/wiki/CSS/Tutorials/Grid"
+      ]
+    },
+    "colors": {
+      "content": "Der CSS Datentyp Color beschreibt eine Farbe im sRGB Farbraum. Eine Farbe kann auf eine von drei Arten beschrieben werden: Schlüsselworte, rgb und rgba, hsl und hsla. ...",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/CSS/Farben"
+      ]
+    }
+  },
+  "javascript": {
+    "function": {
+      "content": "Funktionen sind ein Grundbaustein in JavaScript. Eine Funktion ist eine Prozedur - eine Reihe von Anweisungen, um eine Aufgabe auszuführen oder eine Wert auszurechnen. Um Funktionen zu verwenden, müssen diese im Scope (Gültigkeitsbereich) deklariert werden, in dem sie ausgeführt werden soll.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Web/JavaScript/Guide/Funktionen"
+      ]
+    },
+    "ecmascript": {
+      "content": "ECMAScript 6, auch bekannt als ES6 oder ECMAScript 2015, ist die zweite große Überarbeitung von JavaScript. Die Entwicklung setzt sich jährlich fort und liefert neue Sprachfeatures. Einige neue Features für ECMAScript 2021 stehen bereits fest.",
+      "references": [
+        "https://www.w3schools.com/js/js_es6.asp", "https://entwickler.de/online/javascript/ecmascript-2021-features-579936504.html"
+      ]
+    },
+    "object": {
+      "content": "Ein Objekt ist eine Sammlung von zusammenhängenden Daten und/oder Funktionalitäten. Diese bestehen üblicherweise aus verschiedenen Variablen und Funktionen, die Eigenschaften und Methoden genannt werden, wenn sie sich innerhalb von Objekten befinden.",
+      "references": [
+        "https://developer.mozilla.org/de/docs/Learn/JavaScript/Objects/Basics"
+      ]
+    }
+  },
+  "other": {
+    "json": {
+      "content": "JSON (JavaScript Object Notation) ist ein schlankes Datenaustauschformat, das für Menschen einfach zu lesen und zu schreiben und für Maschinen einfach zu parsen (Analysieren von Datenstrukturen) und zu generieren ist. Es basierd auf einer Untermenge der JavaScript Programmiersprache, Standard ECMA-262 dritte Edition - Dezember 1999.",
+      "references": [
+        "https://www.json.org/json-de.html"
+      ]
+    },
+    "linksammlung": {
+      "content": "Einige allgemein hilfreiche Links zu den drei Hauptthemen.",
+      "references": [
+        "https://www.codementor.io/@dariogarciamoya/understanding-this-in-javascript-with-arrow-functions-gcpjwfyuc", "https://specificity.keegan.st/", "https://medium.com/javascript-in-plain-english/how-to-deep-copy-objects-and-arrays-in-javascript-7c911359b089"
+      ]
+    },
+    "videos": {
+      "content": "Einige hilfreiche Videos zu den drei Hauptthemen:\n\n HTML Crashcourse: https://www.youtube.com/watch?v=UB1O30fR-EE \n\n Moderne CSS-Layouts: https://www.youtube.com/watch?v=qm0IfG1GyZU \n\n Funktionale Programmierung mit JavaScript: https://www.youtube.com/watch?v=e-5obm1G_FY",
+      "references": [
+        "https://www.youtube.com/watch?v=UB1O30fR-EE", "https://www.youtube.com/watch?v=e-5obm1G_FY", "https://www.youtube.com/watch?v=qm0IfG1GyZU"
+      ]
+    }
+  }
+}

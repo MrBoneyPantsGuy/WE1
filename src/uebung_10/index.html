@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="login">
+        <h1>Register</h1>
+        <div>
+            <label for="user">Username</label>
+            <input type="text" id="user" class="form" placeholder="Username" required="required" />
+        </div>
+        <div>
+            <label for="password">Password</label>
+            <input type="password" id="password" class="form" placeholder="Password" required="required" />
+        </div>
+        <button id="submit" class="btn btn-primary btn-block btn-large">Register now!</button>
+        <p class="link">Already registered? <a href="./login.html">Click here</a></p>
+    </div>
+</body>
+<script>
+    const submit = document.getElementById('submit');
+    submit.addEventListener('click', function(event) {
+        fetch(new Request("./server.php"), {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-store',
+            body: JSON.stringify(Array.from(document.querySelectorAll('.form'))
+                .reduce((json, input_field) => {
+                    json[input_field.id] = input_field.value;
+                    return json;
+                }, {})),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        setTimeout( function() { alert("Registration complete!"); }, 1500);
+        setTimeout( function() { window.location = 'login.html'}, 1500);
+    });
+</script>
+</html>

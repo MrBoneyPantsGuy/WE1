@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WWW-Navigator (Vue)</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <style>
+        #main ul li {
+            display: inline;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+   <div id="app">
+       <main-nav></main-nav>
+   </div>
+</body>
+    <script>
+        Vue.component('main-nav', {
+            components: {
+            },
+            data() {
+                return {
+                    items: {}
+                }
+            },
+            methods: {
+                getContent() {
+
+                },
+                getItems() {
+                    return Object.keys(this.items);
+                }
+            },
+            created: async function(){
+                this.items = await fetch('content.json').then(content => content.json());
+                console.log(Object.keys(this.items));
+            },
+            template: '<nav id="main">' +
+                        '<ul>'+
+                            '<li v-for="item in this.getItems()">' +
+                                '{{item}}' +
+                            '</li>'+
+                        '</ul>'+
+                    '</nav>'
+        })
+        new Vue({ el: '#app' })
+    </script>
+</html>
