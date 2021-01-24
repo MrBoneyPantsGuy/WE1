@@ -16,8 +16,52 @@
             <label for="password">Password</label>
             <input type="password" id="password" class="form" placeholder="Password" required="required" />
         </div>
-        <button id="submit" class="btn btn-primary btn-block btn-large">Login</button>
+        <button id="submit" class="btn btn-primary btn-block btn-large form" value="login">Login</button>
         <p class="link">Not registered yet? <a href="./index.html">Click here</a></p>
+        <p id="error" class="link"></p>
     </div>
 </body>
+<script>
+    const submit = document.getElementById('submit');
+    const d = document;
+    submit.addEventListener('click', async function() {
+        const loginUser = d.getElementById('user').value;
+        const loginPassword = d.getElementById('password').value;
+        const loginJSON = {'user': loginUser, 'password': loginPassword};
+
+        const logins = await fetch(new Request("./server.php"), {
+            method: 'GET',
+            mode: 'cors',
+            cache: 'no-store',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }).then(res => res.json());
+
+        Object.keys(logins).forEach(entry => {
+            // user and password matches => sign in the user
+            if(logins[entry].user === loginJSON.user && logins[entry].password === loginJSON.password) {
+                //POST to server and set $_SESSION
+                fetch(new Request("./server.php"), {
+                    method: 'POST',
+                    mode: 'cors',
+                    cache: 'no-store',
+                    body: JSON.stringify(Array.from(document.querySelectorAll('.form'))
+                        .reduce((json, input_field) => {
+                            json[input_field.id] = input_field.value;
+                            return json;
+                        }, {})),
+                    headers: {
+                        'Content-Type': 'application/json'
+                    }
+                });
+                window.location = 'content.php';
+            } else { // user or password does not match
+                let result = d.getElementById('error');
+                result.innerText = "Username or Password incorrect!";
+                setTimeout(function() { result.innerText = ""}, 2000);
+            }
+        })
+    });
+</script>
 </html>
