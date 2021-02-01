@@ -37,6 +37,7 @@ main.forEach(item => item.addEventListener('click', async function() {
 
     // set the description and remove prior src code
     desc.innerHTML = "<p>" + data[week].desc + "</p>";
+    desc.style.display = "inline";
     code.innerText = ""
 
     const subEntries = d.querySelectorAll(".navigateSub")

@@ -1,9 +1,32 @@
 {
     "Home": {
-        "desc": "Lösungs-Navigator"
+        "desc": "Lösungs-Navigator",
+        "files": []
+    },
+    "Anmelden": {
+        "desc": "Anmelden",
+        "files": []
+    },
+    "Abmelden": {
+        "desc": "Abmelden",
+        "files": []
+    },
+    "Registrieren": {
+        "desc": "Registrierung",
+        "files": []
+    },
+    "Bonus": {
+        "desc": "Bonus - Snake",
+        "files": [
+            {
+                "name": "Snake",
+                "desc": "Snake mit Vue.js",
+                "pfad": "./src/games/snake/"
+            }
+        ]
     },
     "Woche 1": {
-        "desc" : "Liste aller Dateien zu Woche 1",
+        "desc" : "Liste aller Dateien zu Woche 1 zum Thema HTML",
         "files": [
             {
                 "name": "uebung1.txt",
@@ -18,7 +41,7 @@
         ]
     },
     "Woche 2": {
-        "desc": "Liste aller Dateien zu Woche 2",
+        "desc": "Liste aller Dateien zu Woche 2 zum Thema CSS",
         "files": [
             {
                 "name": "Aufgaben.txt",
@@ -44,7 +67,7 @@
         ]
     },
     "Woche 3": {
-        "desc": "Liste aller Dateien zu Woche 3",
+        "desc": "Liste aller Dateien zu Woche 3 zum Thema CSS (Flexbox/Grid)",
         "files": [
             {
                 "name": "uebung3_1.html",
@@ -64,31 +87,146 @@
         ]
     },
     "Woche 4": {
-        "desc": "Liste aller Datein zu Woche 4",
-        "files": []
+        "desc": "Liste aller Dateien zu Woche 4 zum Thema JavaScript",
+        "files": [
+            {
+                "name": "uebung4_1.html",
+                "desc": "JavaScript - Einleitung (Funktionen)",
+                "pfad": "./src/uebung_4/uebung4_1.html"
+            },
+            {
+                "name": "uebung4_2.html",
+                "desc": "JavaScript - Prototypen",
+                "pfad": "./src/uebung_4/uebung4_2.html"
+            },
+            {
+                "name": "uebung4_3.html",
+                "desc": "JavaScript - Fibonacci",
+                "pfad": "./src/uebung_4/uebung4_3.html"
+            },
+            {
+                "name": "uebung4_4.html",
+                "desc": "JavaScript - Topologische Sortierung",
+                "pfad": "./src/uebung_4/uebung4_4.html"
+            }
+        ]
     },
     "Woche 5": {
-        "desc": "Liste aller Datein zu Woche 5",
-        "files": []
+        "desc": "Liste aller Dateien zu Woche 5 zum Thema JavaScript (ES6)",
+        "files": [
+            {
+                "name": "uebung5_1.html",
+                "desc": "JavaScript - Klassen und Iteratoren",
+                "pfad": "./src/uebung_5/uebung5_1.html"
+            },
+            {
+                "name": "uebung5_2.html",
+                "desc": "JavaScript - Klassen und Iteratoren",
+                "pfad": "./src/uebung_5/uebung5_2.html"
+            },
+            {
+                "name": "uebung5_3.html",
+                "desc": "JavaScript - Klassen und Iteratoren",
+                "pfad": "./src/uebung_5/uebung5_3.html"
+            },
+            {
+                "name": "uebung5_4.html",
+                "desc": "JavaScript - Proxy (unvollständig)",
+                "pfad": "./src/uebung_5/uebung5_4.html"
+            },
+            {
+                "name": "uebung5_5.html",
+                "desc": "JavaScript - DeepCopy (unvollständig)",
+                "pfad": "./src/uebung_5/uebung5_5.html"
+            }
+        ]
     },
     "Woche 6": {
-        "desc": "Liste aller Datein zu Woche 6",
-        "files": []
+        "desc": "Liste aller Dateien zu Woche 6 zum Thema JavaScript (Funktionale Programmierung)",
+        "files": [
+            {
+                "name": "uebung6_1.html",
+                "desc": "JavaScript - Funktionale Programmierung",
+                "pfad": "./src/uebung_6/uebung6_1.html"
+            },
+            {
+                "name": "uebung6_2.html",
+                "desc": "JavaScript - Funktionale Programmierung (Welches Wort kommt am häufigsten vor?)",
+                "pfad": "./src/uebung_6/uebung6_2.html"
+            }
+        ]
     },
     "Woche 7": {
-        "desc": "Liste aller Datein zu Woche 7",
-        "files": []
+        "desc": "Liste aller Dateien zu Woche 7 zum Thema DOM",
+        "files": [
+            {
+                "name": "uebung7_1.html",
+                "desc": "JavaScript - Performanzmessungen",
+                "pfad": "./src/uebung_7/uebung7_1.html"
+            },
+            {
+                "name": "uebung7_2.html",
+                "desc": "JavaScript - Rednerliste",
+                "pfad": "./src/uebung_7/uebung7_2.html"
+            },
+            {
+                "name": "functions.js",
+                "desc": "JavaScript zu Aufgabe 7.2",
+                "pfad": "./src/uebung_7/functions.js"
+            }
+        ]
     },
     "Woche 8": {
-        "desc": "Liste aller Datein zu Woche 8",
-        "files": []
+        "desc": "Liste aller Dateien zu Woche 8 zum Thema JavaScript (Async)",
+        "files": [
+            {
+                "name": "uebung8_1.html",
+                "desc": "JavaScript - Promises",
+                "pfad": "./src/uebung_8/uebung8_1.html"
+            },
+            {
+                "name": "uebung8_2.html",
+                "desc": "JavaScript - Promises",
+                "pfad": "./src/uebung_8/uebung8_2.html"
+            },
+            {
+                "name": "uebung8_3.html",
+                "desc": "Navigator",
+                "pfad": "./src/uebung_8/uebung8_3.html"
+            },
+            {
+                "name": "A.txt",
+                "desc": "Testdatei für Aufgabe 8.1 und 8.2",
+                "pfad": "./src/uebung_8/A.txt"
+            },
+            {
+                "name": "B.txt",
+                "desc": "Testdatei für Aufgabe 8.1 und 8.2",
+                "pfad": "./src/uebung_8/B.txt"
+            },
+            {
+                "name": "content.json",
+                "desc": "Inhalte für Aufgabe 8.3 in JSON",
+                "pfad": "./src/uebung_8/content.json"
+            },
+            {
+                "name": "navigator.js",
+                "desc": "Funktionslogik für Aufgabe 8.3 (Navigator)",
+                "pfad": "./src/uebung_8/navigator.js"
+            },
+            {
+                "name": "navigator.css",
+                "desc": "CSS Design für Aufgabe 8.3 (Navigator)",
+                "pfad": "./src/uebung_8/navigator.css"
+            }
+        ]
     },
     "Woche 9": {
-        "desc": "Liste aller Datein zu Woche 9",
+        "desc": "Liste aller Dateien zu Woche 9 zum Thema Vue.js",
         "files": []
     },
     "Woche 10": {
-        "desc": "Liste aller Datein zu Woche 10",
+        "desc": "Liste aller Dateien zu Woche 10 zum Thema PHP",
         "files": []
     }
 }

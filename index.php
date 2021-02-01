@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    $_SESSION['user'] = "Peter Platzhalter";
+?>
+
 <!doctype html>
 <html lang="de">
 <head>
@@ -29,7 +34,7 @@
 
         #main-menu {
             grid-area: header;
-            background: dimgrey;
+            background: #333;
         }
 
         #sub-menu {
@@ -43,7 +48,7 @@
         #content-area {
             display: grid;
             grid-area: content;
-            background: orange;
+            background: dimgrey;
             width: 100%;
             grid-template-columns: 100%;
             grid-template-rows: auto 1fr;
@@ -57,10 +62,10 @@
             grid-area: info;
             background: #4a77d4;
             padding-left: 1em;
-            display: inline;
+            display: none;
         }
 
-        #codecontainer {
+        #code-container {
             grid-area: file;
             background: dimgrey;
             padding: 1em;
@@ -93,7 +98,7 @@
 
         #footer {
             grid-area: footer;
-            background: dodgerblue;
+            background: #333;
         }
 
         ul.menu {
@@ -122,12 +127,21 @@
         ul.menu li a.active {
             background-color: #1E90FF;
         }
+
+        .right {
+            float: right;
+        }
+
+        ul li:hover {
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <nav id="main-menu" >
             <ul class="menu">
+                <li><a class="navigateMain active">Home</a></li>
                 <li><a class="navigateMain">Woche 1</a></li>
                 <li><a class="navigateMain">Woche 2</a></li>
                 <li><a class="navigateMain">Woche 3</a></li>
@@ -138,6 +152,13 @@
                 <li><a class="navigateMain">Woche 8</a></li>
                 <li><a class="navigateMain">Woche 9</a></li>
                 <li><a class="navigateMain">Woche 10</a></li>
+                <li><a class="navigateMain">Bonus</a></li>
+                <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
+                    <li style="float: right;"><a class="navigateMain">Abmelden</a></li>
+                <?php } else { ?>
+                    <li style="float: right;"><a class="navigateMain">Anmelden</a></li>
+                    <li style="float: right;"><a class="navigateMain">Registrieren</a></li>
+                <?php } ?>
             </ul>
         </nav>
         <nav id="sub-menu">
@@ -148,10 +169,10 @@
         </nav>
         <div id="content-area">
             <div id="info"><p>Beschreibung der Aufgabe</p></div>
-            <div id="codecontainer"><pre><code class="lang-html" id="code"></code></pre></div>
+            <div id="code-container"><pre><code class="lang-html" id="code"></code></pre></div>
         </div>
         <footer id="footer">
-            <ul class="menu copyright">
+            <ul class="menu copyright right">
                 <li><a href="https://www.h-brs.de/de/impressum" target="_blank">Impressum</a></li>
             </ul>
         </footer>
