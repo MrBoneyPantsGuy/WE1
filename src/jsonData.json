@@ -1,0 +1,94 @@
+{
+    "Home": {
+        "desc": "Lösungs-Navigator"
+    },
+    "Woche 1": {
+        "desc" : "Liste aller Dateien zu Woche 1",
+        "files": [
+            {
+                "name": "uebung1.txt",
+                "desc": "Textbasierte Fragen und Antworten zur Entstehung des Webs",
+                "pfad": "./src/uebung_1/Uebung1.txt"
+            },
+            {
+                "name": "uebung1_4.html",
+                "desc": "Inventors of the Web - Standardsyntax HTML",
+                "pfad": "./src/uebung_1/Uebung1_4.html"
+            }
+        ]
+    },
+    "Woche 2": {
+        "desc": "Liste aller Dateien zu Woche 2",
+        "files": [
+            {
+                "name": "Aufgaben.txt",
+                "desc": "Textbasierte Lösungen zu CSS Spezifität und Farb-Codes",
+                "pfad": "./src/uebung_2/Aufgaben.txt"
+            },
+            {
+                "name": "uebung2_1.html",
+                "desc": "Sticky Header",
+                "pfad": "./src/uebung_2/uebung2_1.html"
+            },
+            {
+                "name": "uebung2_2.html",
+                "desc": "Toggle Visibility",
+                "pfad": "./src/uebung_2/uebung2_2.html"
+            },
+            {
+                "name": "uebung2_3.html",
+                "desc": "Wireframe Survey Form (CSS)",
+                "pfad": "./src/uebung_2/uebung2_3.html"
+            }
+
+        ]
+    },
+    "Woche 3": {
+        "desc": "Liste aller Dateien zu Woche 3",
+        "files": [
+            {
+                "name": "uebung3_1.html",
+                "desc": "Übung mit CSS Flexbox-Layout",
+                "pfad": "./src/uebung_3/uebung3_1.html"
+            },
+            {
+                "name": "uebung3_2.html",
+                "desc": "Übung mit CSS Grid-Layout",
+                "pfad": "./src/uebung_3/uebung3_2.html"
+            },
+            {
+                "name": "uebung3_3.html",
+                "desc": "Wireframe 'You Dont Know Javascript' mit CSS-Grid",
+                "pfad": "./src/uebung_3/uebung3_3.html"
+            }
+        ]
+    },
+    "Woche 4": {
+        "desc": "Liste aller Datein zu Woche 4",
+        "files": []
+    },
+    "Woche 5": {
+        "desc": "Liste aller Datein zu Woche 5",
+        "files": []
+    },
+    "Woche 6": {
+        "desc": "Liste aller Datein zu Woche 6",
+        "files": []
+    },
+    "Woche 7": {
+        "desc": "Liste aller Datein zu Woche 7",
+        "files": []
+    },
+    "Woche 8": {
+        "desc": "Liste aller Datein zu Woche 8",
+        "files": []
+    },
+    "Woche 9": {
+        "desc": "Liste aller Datein zu Woche 9",
+        "files": []
+    },
+    "Woche 10": {
+        "desc": "Liste aller Datein zu Woche 10",
+        "files": []
+    }
+}
