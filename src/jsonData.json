@@ -22,7 +22,18 @@
                 "name": "Snake",
                 "desc": "Snake mit Vue.js",
                 "pfad": "./src/games/snake/"
+            },
+            {
+                "name": "App.vue",
+                "desc": "Startkomponente",
+                "pfad": "./src/games/snake/app.vue"
+            },
+            {
+                "name": "Snake.vue",
+                "desc": "Unterkomponente",
+                "pfad": "./src/games/snake/Snake.vue"
             }
+
         ]
     },
     "Woche 1": {
@@ -223,10 +234,52 @@
     },
     "Woche 9": {
         "desc": "Liste aller Dateien zu Woche 9 zum Thema Vue.js",
-        "files": []
+        "files": [
+            {
+                "name": "uebung9_1.html",
+                "desc": "Vue.js - Erste Komponente",
+                "pfad": "./src/uebung_9/uebung9_1.html"
+            },
+            {
+                "name": "uebung9_3.html",
+                "desc": "Vue.js - Navigator SPA (unvollständig)",
+                "pfad": "./src/uebung_9/uebung9_3.html"
+            }
+        ]
     },
     "Woche 10": {
         "desc": "Liste aller Dateien zu Woche 10 zum Thema PHP",
-        "files": []
+        "files": [
+            {
+                "name": "index.html",
+                "desc": "Registrierung",
+                "pfad": "./src/uebung_10/index.html"
+            },
+            {
+                "name": "login.html",
+                "desc": "Anmeldung",
+                "pfad": "./src/uebung_10/login.html"
+            },
+            {
+                "name": "login.css",
+                "desc": "Design",
+                "pfad": "./src/uebung_10/login.css"
+            },
+            {
+                "name": "content.php",
+                "desc": "Content",
+                "pfad": "./src/uebung_10/content.html"
+            },
+            {
+                "name": "server.php",
+                "desc": "Bearbeitung von POST/GET Anfragen",
+                "pfad": "./src/uebung_10/server.html"
+            },
+            {
+                "name": "logout.php",
+                "desc": "Abmeldung",
+                "pfad": "./src/uebung_10/logout.html"
+            }
+        ]
     }
 }

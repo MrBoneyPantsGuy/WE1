@@ -129,7 +129,7 @@
         }
 
         .right {
-            float: right;
+            float: right !important;
         }
 
         ul li:hover {
@@ -141,7 +141,7 @@
     <div id="container">
         <nav id="main-menu" >
             <ul class="menu">
-                <li><a class="navigateMain active">Home</a></li>
+                <li><a class="navigateMain active" id="home">Home</a></li>
                 <li><a class="navigateMain">Woche 1</a></li>
                 <li><a class="navigateMain">Woche 2</a></li>
                 <li><a class="navigateMain">Woche 3</a></li>
@@ -154,10 +154,11 @@
                 <li><a class="navigateMain">Woche 10</a></li>
                 <li><a class="navigateMain">Bonus</a></li>
                 <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                    <li style="float: right;"><a class="navigateMain">Abmelden</a></li>
+                    <li class="right"><a class="navigateMain">Abmelden</a></li>
+                    <li class="right"><a href="./src/uebung_10/content.php" target="_blank">Profil</a></li>
                 <?php } else { ?>
-                    <li style="float: right;"><a class="navigateMain">Anmelden</a></li>
-                    <li style="float: right;"><a class="navigateMain">Registrieren</a></li>
+                    <li class="right"><a class="navigateMain">Anmelden</a></li>
+                    <li class="right"><a class="navigateMain">Registrieren</a></li>
                 <?php } ?>
             </ul>
         </nav>
@@ -169,7 +170,7 @@
         </nav>
         <div id="content-area">
             <div id="info"><p>Beschreibung der Aufgabe</p></div>
-            <div id="code-container"><pre><code class="lang-html" id="code"></code></pre></div>
+            <div id="code-container"><pre><code id="code"></code></pre></div>
         </div>
         <footer id="footer">
             <ul class="menu copyright right">

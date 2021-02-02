@@ -99,4 +99,3 @@ const initialize = Promise.allSettled([main, sub]).then(() => {
 window.addEventListener("popstate", event => {
     urlChecker();
 })
-
