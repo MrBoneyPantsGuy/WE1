@@ -10,22 +10,18 @@ const home = d.getElementById("home");
 // listen to all clicks on the main menu
 const main = document.querySelectorAll(".navigateMain");
 main.forEach(item => item.addEventListener('click', async function() {
+    setActive(item);
     const data = await jsonData;
     const week = item.innerHTML;
-
-    // submenu
     const subtitle = d.getElementById("week");
     const subs = d.getElementById("files");
-    subs.innerHTML = ""; // clear list
-
-    // content area
     const desc = d.getElementById("info");
-    // const code = d.getElementById("code"); // needs to be accessed after rebuild
-    // const container = d.getElementById("code-container"); needs to be accessed after rebuild
 
-    // appends all files to the list
+    // submenu
+    subs.innerHTML = ""; // clear list
     subtitle.innerHTML = week;
 
+    // appends all files to the list
     let id = 0;
     data[week].files.forEach(elem => {
         const entry = d.createElement("li");
@@ -44,7 +40,7 @@ main.forEach(item => item.addEventListener('click', async function() {
     if(week === "Registrieren" || week === "Anmelden" || week === "Abmelden" || week === "Home") {
         readyForRender();
         if(week === "Home") {
-            d.getElementById("code-container").innerHTML = await fetch("src/home.html").then(res => res.text());
+            d.getElementById("code-container").innerHTML = await fetch("./src/home.html").then(res => res.text());
         } else {
             d.getElementById("code-container").innerHTML = "<h2>Füge gerenderte " + week + "-PHP-Seite hier ein...</h2>";
         }
@@ -63,11 +59,13 @@ main.forEach(item => item.addEventListener('click', async function() {
         }));
 }));
 
+// switches the content area from displaying code to actually render to fetched data by removing <pre> and <code>
 const readyForRender = function () {
     const container = d.getElementById("code-container");
     container.innerHTML = "";
 }
 
+// switches the content area from rendering the fetched content to display it as code by adding <pre> and <code>
 const readyForCode = function () {
     const container = d.getElementById("code-container");
     const pre = d.createElement("pre");
@@ -80,4 +78,14 @@ const readyForCode = function () {
     container.appendChild(pre);
 }
 
+const setActive = (item) => {
+    // remove all other active classes
+    const navigation = d.querySelectorAll(".navigateMain").forEach(elem => {
+        elem.classList.remove("active")
+    })
+    // add active to current element
+    item.classList.add("active");
+}
+
+// initialize SPA
 home.click();
