@@ -1,7 +1,11 @@
 {
     "Home": {
         "desc": "Lösungs-Navigator",
-        "files": []
+        "files": [
+            {
+                "pfad": "./src/home.html"
+            }
+        ]
     },
     "Anmelden": {
         "desc": "Anmelden",
@@ -278,6 +282,14 @@
                 "name": "logout.php",
                 "desc": "Abmeldung",
                 "pfad": "./src/uebung_10/logout.html"
+            }
+        ]
+    },
+    "Notenverbesserungen": {
+        "desc": "Videos für Notenverbesserungen",
+        "files": [
+            {
+                "pfad": "./src/Notenverbesserungen/videos.html"
             }
         ]
     }

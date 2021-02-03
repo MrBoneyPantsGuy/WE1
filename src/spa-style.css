@@ -1,0 +1,246 @@
+body {
+    margin: 0;
+    font-family: 'Raleway';
+}
+
+#code-container a:link {
+    color: black;
+    text-decoration: none;
+}
+
+#code-container a:visited {
+    color: black;
+}
+
+#code-container a:focus {
+    color: black;
+}
+
+#code-container a:hover {
+    color: white;
+    font-weight: bold;
+}
+
+#main-menu {
+    grid-area: header;
+    background: #333;
+}
+
+#sub-menu {
+    grid-area: left;
+    background: darkgrey;
+    display: none;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+#content-area {
+    display: grid;
+    grid-area: content;
+    background: dimgrey;
+    width: 100%;
+    grid-template-columns: 100%;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+            "info"
+            "file";
+    overflow-y: scroll;
+}
+
+#info {
+    grid-area: info;
+    background: #4a77d4;
+    padding: 0.5em;
+    display: none;
+}
+
+#info .content-title {
+    padding-right: 0.5em;
+}
+
+#code-container {
+    grid-area: file;
+    background: dimgrey;
+    padding: 1em;
+}
+
+.renderbutton {
+    padding: 0.5em;
+    width: 150px;
+    text-align: center;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: whitesmoke;
+    display: inline-block;
+}
+
+.renderbutton:link {
+    text-decoration: none;
+}
+
+.renderbutton:visited {
+    color: black;
+}
+
+.renderbutton:active {
+    background-color: black;
+    color: white;
+}
+
+pre {
+    white-space: pre-wrap;
+    tab-size: 3;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: gold;
+}
+
+#footer {
+    grid-area: footer;
+    background: #333;
+}
+
+ul.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+ul.menu li {
+    float: left;
+}
+
+ul.menu li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    text-decoration: none;
+}
+
+ul.menu li a:hover:not(.active) {
+    background-color: #000;
+}
+
+ul.menu li a.active {
+    background-color: #1E90FF;
+}
+
+ul li:hover {
+    cursor: pointer;
+}
+
+.video-container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: #333;
+}
+
+.menu a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 1em 1em;
+    text-decoration: none;
+    float: left;
+}
+
+.menu a:hover:not(.active) {
+    background-color: #000;
+}
+
+.menu a.active {
+    background-color: #1E90FF;
+}
+
+.menu a:hover {
+    cursor: pointer;
+}
+
+.menu .icon {
+    display: none;
+}
+
+@media screen and (max-width: 4000px) {
+
+    #container {
+        display: grid;
+        width: 100%;
+        height: 100vh;
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header header header"
+            "left content content"
+            "footer footer footer";
+    }
+
+    .toggle {
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    #container {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:
+            "header"
+            "left"
+            "content"
+            "footer";
+    }
+
+    .menu a:not(:first-child) {display: none;}
+    .menu a.icon {
+        float: right;
+        display: block;
+    }
+
+    .menu.responsive {position: relative;}
+    .menu.responsive a.icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .menu.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+
+    #sub-menu {
+        grid-area: left;
+        background: darkgrey;
+        display: none;
+        padding-left: 0.5em;
+        padding-right: 1em;
+    }
+
+    #sub-menu ul li {
+        display: inline-block;
+        border: 1px solid black;
+        padding: 0.25em;
+        margin: 0.25em;
+    }
+
+    .toggle {
+        display: none;
+    }
+
+    #sub-menu h3 {
+        margin: 0;
+    }
+}

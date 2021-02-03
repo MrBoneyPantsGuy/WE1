@@ -1,28 +1,30 @@
 "use strict";
 
 const d = document;
+const home = d.getElementById("home");
+
 const getJsonData = async function() {
     return await fetch("./src/jsonData.json").then(res => res.json());
 }
 const jsonData = getJsonData();
-const home = d.getElementById("home");
+
 
 // listen to all clicks on the main menu
 const main = document.querySelectorAll(".navigateMain");
 main.forEach(item => item.addEventListener('click', async function() {
-    setActive(item);
+    const activate = setActive(item);
     const data = await jsonData;
     const week = item.innerHTML;
     const subtitle = d.getElementById("week");
     const subs = d.getElementById("files");
     const desc = d.getElementById("info");
+    let id = 0;
 
     // submenu
+    subtitle.innerHTML = week; // assign title
     subs.innerHTML = ""; // clear list
-    subtitle.innerHTML = week;
 
     // appends all files to the list
-    let id = 0;
     data[week].files.forEach(elem => {
         const entry = d.createElement("li");
         entry.className = "navigateSub";
@@ -33,29 +35,30 @@ main.forEach(item => item.addEventListener('click', async function() {
     });
 
     // set the description and remove prior src code
-    desc.innerHTML = "<p>" + data[week].desc + "</p>";
+    desc.innerHTML = "<span class='content-title'>"+ data[week].desc+"</span>";
     desc.style.display = "inline";
 
     // Exceptions for Register/Login/Logout
-    if(week === "Registrieren" || week === "Anmelden" || week === "Abmelden" || week === "Home") {
-        readyForRender();
-        if(week === "Home") {
-            d.getElementById("code-container").innerHTML = await fetch("./src/home.html").then(res => res.text());
+    if(week === "Registrieren" || week === "Anmelden" || week === "Abmelden" || week === "Home" || week === "Notenverbesserungen") {
+        const render = readyForRender();
+        if(week === "Home" || week === "Notenverbesserungen") {
+            d.getElementById("code-container").innerHTML = await fetch(data[week].files[0].pfad).then(res => res.text());
         } else {
             d.getElementById("code-container").innerHTML = "<h2>Füge gerenderte " + week + "-PHP-Seite hier ein...</h2>";
         }
         d.getElementById("sub-menu").style.display = "none";
     } else {
-        readyForCode();
+        const code = readyForCode();
         d.getElementById("code").innerText = "";
         d.getElementById("sub-menu").style.display = "block";
     }
 
+    // select all elements in the submenu and add the eventlistener to fetch the corresponding data
     const subEntries = d.querySelectorAll(".navigateSub")
         .forEach(sub => sub.addEventListener('click', async function() {
             const filepath = data[week].files[sub.id].pfad;
             d.getElementById("code").innerText = await fetch(filepath).then(res => res.text());
-            desc.innerHTML = "<p>" + data[week].files[sub.id].desc + "<a href='"+ data[week].files[sub.id].pfad +"' target='_blank'><button class='renderbutton'>In Aktion anzeigen!</button></a></p>";
+            desc.innerHTML = "<span class='content-title'>" + data[week].files[sub.id].desc + "</span><a class='renderbutton' href='"+ data[week].files[sub.id].pfad +"' target='_blank'>In Aktion anzeigen!</a>";
         }));
 }));
 
@@ -87,5 +90,15 @@ const setActive = (item) => {
     item.classList.add("active");
 }
 
-// initialize SPA
+/* Toggle between adding and removing the "responsive" class to main-menu when the user clicks on the icon */
+function toggleMenu() {
+    let x = d.getElementById("main-menu");
+    if (x.className === "menu") {
+        x.className += " responsive";
+    } else {
+        x.className = "menu";
+    }
+}
+
+// initialize SPA on home screen
 home.click();
