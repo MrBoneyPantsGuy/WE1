@@ -40,7 +40,7 @@
                 <i class="fa fa-bars"></i>
             </a>
         </nav>
-        <nav id="sub-menu">
+        <nav id="sub-menu" class="menu">
             <h3 id="week"></h3>
             <hr class="toggle">
             <ul id="files">
@@ -48,6 +48,7 @@
         </nav>
         <div id="content-area">
             <div id="info"><p>Beschreibung der Aufgabe</p></div>
+            <div id="task">Aufgabenstellung: </div>
             <div id="code-container"><pre><code id="code"></code></pre></div>
         </div>
         <footer id="footer">

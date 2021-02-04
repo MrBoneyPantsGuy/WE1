@@ -1,6 +1,8 @@
 {
     "Home": {
         "desc": "Lösungs-Navigator",
+        "needsRendering": true,
+        "goals": [],
         "files": [
             {
                 "pfad": "./src/home.html"
@@ -9,72 +11,148 @@
     },
     "Anmelden": {
         "desc": "Anmelden",
+        "needsRendering": true,
+        "goals": [],
         "files": []
     },
     "Abmelden": {
         "desc": "Abmelden",
+        "needsRendering": true,
+        "goals": [],
         "files": []
     },
     "Registrieren": {
         "desc": "Registrierung",
+        "needsRendering": true,
+        "goals": [],
         "files": []
     },
     "Bonus": {
         "desc": "Bonus - Snake",
+        "needsRendering": false,
+        "goals": [],
         "files": [
             {
                 "name": "Snake",
                 "desc": "Snake mit Vue.js",
+                "tasks": [],
                 "pfad": "./src/games/snake/"
             },
             {
                 "name": "App.vue",
                 "desc": "Startkomponente",
+                "tasks": [],
                 "pfad": "./src/games/snake/app.vue"
             },
             {
                 "name": "Snake.vue",
                 "desc": "Unterkomponente",
+                "tasks": [],
                 "pfad": "./src/games/snake/Snake.vue"
             }
         ]
     },
     "Woche 1": {
         "desc" : "Liste aller Dateien zu Woche 1 zum Thema HTML",
+        "needsRendering": false,
+        "goals": [
+           "Die Geschichte des WWW beschreiben können.",
+            "Grundbegriffe des WWW erklären können.",
+            "Die Paradigmen der WWW-Technologien erläutern können.",
+            "Das HTTP-Protokoll beschreiben können.",
+            "Die wichtigsten HTTP-Fehlercodes kennen und erläutern können.",
+            "Uniform Resource Identifier (URI) und deren Anwendung erklären können.",
+            "HTML beschreiben und anwenden können.",
+            "Wireframes mit HTML nachbauen können."
+        ],
         "files": [
             {
                 "name": "uebung1.txt",
                 "desc": "Textbasierte Fragen und Antworten zur Entstehung des Webs",
+                "tasks": [
+                    "Mit welchen fachlichen Argumenten wurde das WWW-Proposal von TBL abgelehnt?",
+                    "Was sind die fachlichen Argumente, warum das WWW dennoch ein Erfolg wurde?",
+                    "Was wäre der Preis für die garantierte Verhinderung von “broken links”?",
+                    "Sie bekommen im Browser den HTTP Status Code 200. Was bedeutet das?",
+                    "Sie bekommen im Browser den HTTP Status Code 301. Was hat das zu bedeuten?",
+                    "Sie bekommen im Browser den HTTP Status Code 400. Was hat das zu bedeuten? Was können Sie dagegen tun?",
+                    "Sie bekommen im Browser den HTTP Status Code 403. Was hat das zu bedeuten? Was können Sie dagegen tun?",
+                    "In einer Webanwendung benötigen Sie eine OPTIONS-Anfrage, die die Optionen des Servers vor dem eigentlichen Zugriff erfragen soll. Aus Performanzgründen soll die Abfrage jedoch cacheable sein. Wie könnten Sie dafür eine Lösung angehen?",
+                    "Was ist HTML?",
+                    "Wie kann man eine geschachtelte geordnete Liste der Schachtelungstiefe 3 erzeugen?",
+                    "Wie ist eine HTML-Tabelle aufgebaut?",
+                    "Welche Konventionen sollte man bei Pfaden und Dateinamen beachten?",
+                    "Wie baut man in HTML ein Menü?",
+                    "Welche Attribute sollte man bei Bildern wie verwenden?"
+                ],
                 "pfad": "./src/uebung_1/Uebung1.txt"
             },
             {
                 "name": "uebung1_4.html",
                 "desc": "Inventors of the Web - Standardsyntax HTML",
+                "tasks": [
+                    "Gegeben ist folgendes <a href='https://kaul.inf.h-brs.de/we/assets/img/wireframe01.jpg' target='_blank'>Wireframe</a>.",
+                    "Mit welchem HTML-Code (ohne CSS, nur mit HTML-Tags) kann man diesen Wireframe exakt nachbilden?"
+                ],
                 "pfad": "./src/uebung_1/uebung1_4.html"
             }
         ]
     },
     "Woche 2": {
         "desc": "Liste aller Dateien zu Woche 2 zum Thema CSS",
+        "needsRendering": false,
+        "goals": [
+            "CSS beschreiben und anwenden können.",
+            "Spezifität von CSS-Selektoren berechnen können.",
+            "RGB in HSL und umgekehrt mit DevTools umrechnen können.",
+            "Wireframes mit HTML und CSS nachbauen können.",
+            "Eigene Homepage mit HTML und CSS erstellen können.",
+            "Eigene Homepage auf Linux-Server installieren können."
+        ],
         "files": [
             {
                 "name": "Aufgaben.txt",
                 "desc": "Textbasierte Lösungen zu CSS Spezifität und Farb-Codes",
+                "tasks": [
+                    "Aufgabe 1: Berechnen Sie die Spezifität folgender CSS-Selektoren:",
+                    "1. div div div:focus  .inner",
+                    "2. h1 + div.main",
+                    "3. div a:link[href*='h-brs']",
+                    "4. nav > a:hover::before",
+                    "5. ul#primary-nav  li.active<br>",
+                    "Aufgabe 2: Rechnen Sie folgende RGB-Werte in HSL-Werte um:",
+                    "1. #ffffff",
+                    "2. #000",
+                    "3. #ab0978",
+                    "4. rgb(127,255,33)",
+                    "5. rgba(255,127,33,0.8)"
+                ],
                 "pfad": "./src/uebung_2/Aufgaben.txt"
             },
             {
                 "name": "uebung2_1.html",
                 "desc": "Sticky Header",
+                "tasks": [
+                    "Schauen Sie sich folgendes <a href='https://youtu.be/PE3POxjDspo' target='_blank'>Video</a> an und bauen Sie das dynamische Verhalten exakt nach (nur mit HTML und CSS, ohne JavaScript):"
+                ],
                 "pfad": "./src/uebung_2/uebung2_1.html"
             },
             {
                 "name": "uebung2_2.html",
                 "desc": "Toggle Visibility",
+                "tasks": [
+                    "Schauen Sie sich folgendes <a href='https://youtu.be/HVmnv3k4__E' target='_blank'>Video</a> an und bauen Sie das dynamische Verhalten exakt nach (nur mit HTML und CSS, ohne JavaScript):"
+                ],
                 "pfad": "./src/uebung_2/uebung2_2.html"
             },
             {
                 "name": "uebung2_3.html",
                 "desc": "Wireframe Survey Form (CSS)",
+                "tasks": [
+                    "Gegeben ist folgendes <a href='https://kaul.inf.h-brs.de/we/assets/img/survey.png' target='_blank'>HTML-Wireframe</a>:",
+                    "Frage: Mit welchem HTML- und CSS-Code kann man diesen Wireframe exakt nachbilden?",
+                    "Was war in der Lösung dieser Aufgabe die größte Schwierigkeit und wie haben Sie diese gelöst?"
+                ],
                 "pfad": "./src/uebung_2/uebung2_3.html"
             }
 
@@ -82,214 +160,470 @@
     },
     "Woche 3": {
         "desc": "Liste aller Dateien zu Woche 3 zum Thema CSS (Flexbox/Grid)",
+        "needsRendering": false,
+        "goals": [
+            "Responsive Web Design (RWD) erläutern können.",
+            "Wireframes mit HTML und CSS responsiv nachbauen können.",
+            "Eigene Homepage mit HTML und CSS responsiv gestalten können.",
+            "Flexbox-Layout einsetzen können.",
+            "Grid Layout anwenden können.",
+            "Die 10 technischen CSS-Mittel für Responsive Web Design (RWD) erläutern und anwenden können.",
+            "Wireframes mit Flexbox und Grid nachbauen können.",
+            "Eigene Homepage mit Flexbox und Grid gestalten können."
+        ],
         "files": [
             {
                 "name": "uebung3_1.html",
-                "desc": "Übung mit CSS Flexbox-Layout",
+                "desc": "Aufgabe 3.1 Responsiv mit Flexbox Desktop-First",
+                "tasks": [
+                    "Implementieren Sie ausschließlich mit HTML und CSS Flexbox folgendes responsive <a href='https://kaul.inf.h-brs.de/we/assets/img/holy-grail1.png' target='_blank'>Webdesign</a> nach der Desktop-First-Strategie!"
+                ],
                 "pfad": "./src/uebung_3/uebung3_1.html"
             },
             {
                 "name": "uebung3_2.html",
-                "desc": "Übung mit CSS Grid-Layout",
+                "desc": "Aufgabe 3.2 Responsiv mit Grid Mobile-First",
+                "tasks": [
+                    "Implementieren Sie dann das gleiche responsive Webdesign wie in Aufgabe 3.1 allerdings mit Grid und der Mobile-First-Strategie!",
+                    "Vermeiden Sie diesmal außerdem das Erscheinen von Scrollbars."
+                ],
                 "pfad": "./src/uebung_3/uebung3_2.html"
             },
             {
                 "name": "uebung3_3.html",
                 "desc": "Wireframe 'You Dont Know Javascript' mit CSS-Grid",
+                "tasks": [
+                    "Implementieren Sie folgende <a, href=,'https,://kaul.inf.h-brs.de/we/assets/img/landing.png', target='_blank'>Landing Page</a> responsiv mit Grid Layout.",
+                    "Vermeiden Sie außerdem das Erscheinen von Scrollbars so weit wie möglich."
+                ],
                 "pfad": "./src/uebung_3/uebung3_3.html"
             }
         ]
     },
     "Woche 4": {
         "desc": "Liste aller Dateien zu Woche 4 zum Thema JavaScript",
+        "needsRendering": false,
+        "goals": [
+            "JavaScript-Konzepte erklären können.",
+            "JavaScript-Programme selbst erstellen können.",
+            "Kleine Event-Handler schreiben können.",
+            "Privatisierung in JavaScript programmieren können.",
+            "Douglas Crockford Power Constructor einsetzen können.",
+            "IIFE-Pattern in JavaScript programmieren können.",
+            "Prototypische Vererbung in JavaScript programmieren können.",
+            "Mit Objekten und Funktionen in JavaScript komplexe Probleme lösen können."
+        ],
         "files": [
             {
                 "name": "uebung4_1.html",
                 "desc": "JavaScript - Einleitung (Funktionen)",
+                "tasks": [
+                    "Schreiben Sie folgende Funktionen in JavaScript:",
+                    "Schreiben Sie eine Funktion identity(), die ein Argument als Parameter entgegen nimmt und dieses als Ergebnis zurück gibt.",
+                    "Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.",
+                    "Schreiben Sie zwei binäre Funktionen add und mul, die Summe und Produkt berechnen.",
+                    "Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)",
+                    "Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist."
+                ],
                 "pfad": "./src/uebung_4/uebung4_1.html"
             },
             {
                 "name": "uebung4_2.html",
                 "desc": "JavaScript - Prototypen",
+                "tasks": [
+                    "Schreiben Sie die Prototypen Person und Auto in JavaScript, so dass jede Person weiß, welche Autos sie besitzt. Schreiben Sie eine Funktion conflict(), die feststellt, ob ein Auto von mehr als einer Person besessen wird."
+                ],
                 "pfad": "./src/uebung_4/uebung4_2.html"
             },
             {
                 "name": "uebung4_3.html",
                 "desc": "JavaScript - Fibonacci",
+                "tasks": [
+                    "Schreiben Sie im Browser die Fibonacci-Funktion in JavaScript und geben Sie die ersten 2000 Fibonacci-Zahlen 0,1,1,2,3,5,8,13,... auf der Konsole mit console.log() aus.",
+                    "Achten Sie auf Performanz: Berechnen Sie jeden Fibonacci-Wert nur einmal. Speichern Sie zu diesem Zweck jede bereits berechnete Fibonacci-Zahl in einer Tabelle.",
+                    "Was ist die größte Fibonacci-Zahl, die sich noch als Integer sicher speichern lässt (Number.MAX_SAFE_INTEGER)? Die wievielte Fibonacci-Zahl in der Fibonacci-Folge ist das?",
+                    "Was ist die größte Fibonacci-Zahl, die sich noch als Number speichern lässt (Number.MAX_VALUE)? Die wievielte Fibonacci-Zahl in der Fibonacci-Folge ist das (d.h. welche Stelle in der Fibonacci-Folge)?",
+                    "Wechseln Sie zu BigInt, um alle 2000 Fibonacci-Zahlen korrekt anzuzeigen.",
+                    "Optional: Was ist die größte Fibonacci-Zahl, die Sie mit BigInt korrekt berechnet haben? An welcher Stelle in der Fibonacci-Folge steht diese?"
+                ],
                 "pfad": "./src/uebung_4/uebung4_3.html"
             },
             {
                 "name": "uebung4_4.html",
                 "desc": "JavaScript - Topologische Sortierung",
+                "tasks": [
+                    "In jedem Projekt fallen Aufgaben (Tasks) an. Zwischen den Aufgaben gibt es paarweise Abhängigkeiten. Z.B. kann Task2 von Task1 abhängen, d.h. erst muss Task1 fertig sein, bevor Task2 starten kann, weil es dessen Ergebnisse benötigt. Tasks können auch unabhängig voneinander sein und parallel ablaufen. In JavaScript können Sie die Abhängigkeiten in Arrays codieren, z.B. kann man bei [ [\"schlafen\", \"studieren\"], [\"essen\", \"studieren\"], [\"studieren\", \"prüfen\"] ] nicht prüfen, ohne vorher gegessen zu haben. Transitive Abhängigkeiten müssen also berücksichtigt werden.",
+                    "Schreiben Sie in JavaScript eine Funktion topsort(), die eine topologische Sortierung berechnet.",
+                    "Achten Sie auf Performanz. Berechnen Sie die topologische Sortierung in linearer Zeit (Average Case).",
+                    "Testen Sie Ihren JavaScript-Code. Verwenden Sie für Ihre Tests die Funktion console.assert."
+                ],
                 "pfad": "./src/uebung_4/uebung4_4.html"
             }
         ]
     },
     "Woche 5": {
         "desc": "Liste aller Dateien zu Woche 5 zum Thema JavaScript (ES6)",
+        "needsRendering": false,
+        "goals": [
+            "ECMAScript-Konzepte erklären können.",
+            "ECMAScript-Programme selbst erstellen können.",
+            "Arrow Functions schreiben können.",
+            "Den Unterschied zwischen Functions und Arrow Functions beschreiben können.",
+            "Den Unterschied zwischen var und const / let beschreiben können.",
+            "Klassenausdrücke und Mixins in ECMAScript programmieren können.",
+            "Tagged Template Literals programmieren können.",
+            "Destructuring einsetzen können.",
+            "Den Spread-Operator einsetzen können.",
+            "Das Iterationsprotokoll beschreiben und umsetzen können.",
+            "Generatoren programmieren können.",
+            "ES6 Module anwenden, d.h. exportieren und importieren können.",
+            "Collection Datentypen wie Map, Set, WeakMap und WeakSet anwenden können.",
+            "Proxies anwenden können.",
+            "Promises programmieren können.",
+            "Object APIs anwenden können.",
+            "Deep Copy programmieren können."
+        ],
         "files": [
             {
                 "name": "uebung5_1.html",
                 "desc": "JavaScript - Klassen und Iteratoren",
+                "tasks": [
+                    "Schreiben Sie eine ES6-Klasse Vorrang für Vorrangrelationen, z.B. new Vorrang([ [\"schlafen\", \"studieren\"], [\"essen\", \"studieren\"], [\"studieren\", \"prüfen\"] ]). Wählen Sie eine Implementierung, die universell gültig, also nicht nur für dieses Beispiel gilt. (Überlegen Sie sich, über welche Properties und Methoden eine solche Klasse verfügen sollte und wie TopSort hier hinein spielt. Topologische Iterierbarkeit und topologischer Generator sind jedoch Gegenstand der nächsten Übungen weiter unten auf diesem Übungsblatt und sollten für diese Aufgaben aufgespart werden.)",
+                    "Verwenden Sie die neuen Sprach-Konzepte aus der Vorlesung so weit wie möglich."
+                ],
                 "pfad": "./src/uebung_5/uebung5_1.html"
             },
             {
                 "name": "uebung5_2.html",
                 "desc": "JavaScript - Klassen und Iteratoren",
+                "tasks": [
+                    "Stellen Sie bei Ihrer Klasse aus der letzten Aufgabe die topologische Iterierbarkeit her (zunächst über das Iterationsprotokoll, ohne Generator, ohne yield).",
+                    "Wählen Sie eine Implementierung, die universell gültig, also nicht nur für dieses Beispiel gilt.",
+                    "Die topologische Sortierung im Konstruktor vorzuberechnen, wäre eine triviale Lösung, bei der man einfach die Lösung von 4.4 abschreibt. Versuchen Sie stattdessen, erst beim Aufruf von next() die erforderliche Berechnung durchzuführen, allerdings mit minimalem Aufwand.",
+                    "Verwenden Sie so weit wie möglich High-Level-Methoden wie Object.keys und High-Level-Datenstrukturen wie Map und Set und deren Methoden, anstatt mühsam von Hand zu iterieren und zu zählen."
+
+                ],
                 "pfad": "./src/uebung_5/uebung5_2.html"
             },
             {
                 "name": "uebung5_3.html",
                 "desc": "JavaScript - Klassen und Iteratoren",
+                "tasks": [
+                    "Stellen Sie bei Ihrer Klasse aus der vorletzten Aufgabe die topologische Iterierbarkeit mittels Generator her.",
+                    "Wählen Sie eine Implementierung, die universell gültig, also nicht nur für das Beispiel gilt."
+                ],
                 "pfad": "./src/uebung_5/uebung5_3.html"
             },
             {
                 "name": "uebung5_4.html",
                 "desc": "JavaScript - Proxy (unvollständig)",
+                "tasks": [
+                    "Erweitern Sie Ihre Vorrang-Klasse um Logging, indem Sie ein Proxy einfügen. Lassen Sie sich vom Logger bei jedem Schritt ausgeben, wie viele der Vorrangrelationen noch übrig bleiben. Verwenden Sie so weit wie möglich High-Level-Methoden wie Object.keys und High-Level-Datenstrukturen wie Map und Set und deren Methoden, anstatt mühsam von Hand zu iterieren und zu zählen."
+                ],
                 "pfad": "./src/uebung_5/uebung5_4.html"
             },
             {
                 "name": "uebung5_5.html",
                 "desc": "JavaScript - DeepCopy (unvollständig)",
+                "tasks": [
+                    "Schreiben Sie eine rekursive Funktion deepCopy( struct ) als ES6-Ausdruck, so dass beliebig geschachtelte Arrays und Objekte struct tiefenkopiert werden können. Verwenden Sie zu diesem Zweck den konditionalen ternären Operator, Array.map(), Object.fromEntries() und Object.entries(). Verwenden Sie dabei nur Arrow Functions und Ausdrücke, keine Anweisungen, keine Blöcke. Verwenden Sie nicht die JSON-Methoden."
+                ],
                 "pfad": "./src/uebung_5/uebung5_5.html"
             }
         ]
     },
     "Woche 6": {
         "desc": "Liste aller Dateien zu Woche 6 zum Thema JavaScript (Funktionale Programmierung)",
+        "needsRendering": false,
+        "goals": [
+            "In JavaScript funktional programmieren können.",
+            "Arrow Functions schreiben können.",
+            "Den Unterschied zwischen Functions und Arrow Functions beschreiben können.",
+            "Closures erklären können.",
+            "Closures programmieren können.",
+            "Keyword-Parameter einsetzen können.",
+            "Rest-Parameter verwenden können.",
+            "Mit apply, call, bind arbeiten und damit die Bindung von this ändern können.",
+            "Den Function-Konstruktor einsetzen können.",
+            "Fabrikfunktionen in JavaScript schreiben können.",
+            "Ausdrücke für Funktionen, Objekte und Klassen schreiben können.",
+            "filter-map-reduce-Ketten programmieren können.",
+            "find, findIndex, some und every statt for-Schleifen einsetzen können.",
+            "Auf MDN Funktionen nachschlagen können."
+        ],
         "files": [
             {
                 "name": "uebung6_1.html",
                 "desc": "JavaScript - Funktionale Programmierung",
+                "tasks": [
+                    "Schreiben Sie eine Funktion identity_function(), die ein Argument als Parameter entgegen nimmt und eine Funktion zurück gibt, die dieses Argument zurück gibt.",
+                    "Schreiben Sie eine Addier-Funktion addf(), so dass addf(x)(y) genau x + y zurück gibt. (Es haben also zwei Funktionsaufrufe zu erfolgen. addf(x) liefert eine Funktion, die auf y angewandt wird.)",
+                    "Schreiben Sie eine Funktion applyf(), die aus einer binären Funktion wie add(x,y) eine Funktion addfberechnet, die mit zwei Aufrufen das gleiche Ergebnis liefert, z.B. addf = applyf(add); addf(x)(y) soll add(x,y) liefern. Entsprechend applyf(mul)(5)(6) soll 30 liefern, wenn mul die binäre Multiplikation ist.",
+                    "Schreiben Sie eine Funktion curry() (von Currying), die eine binäre Funktion und ein Argument nimmt, um daraus eine Funktion zu erzeugen, die ein zweites Argument entgegen nimmt, z.B. add3 = curry(add, 3);add3(4) ergibt 7. curry(mul, 5)(6) ergibt 30.",
+                    "Erzeugen Sie die inc-Funktion mit Hilfe einer der Funktionen addf, applyf und curry aus den letzten Aufgaben, ohne die Funktion inc() selbst zu implementieren. (inc(x) soll immer x + 1 ergeben und lässt sich natürlich auch direkt implementieren. Das ist aber hier nicht die Aufgabe.) Vielleicht schaffen Sie es auch, drei Varianten der inc()-Implementierung zu schreiben?",
+                    "Schreiben Sie eine Funktion methodize(), die eine binäre Funktion (z.B. add, mul) in eine unäre Methode verwandelt. Nach Number.prototype.add = methodize(add); soll (3).add(4) genau 7 ergeben.",
+                    "chreiben Sie eine Funktion demethodize(), die eine unäre Methode (z.B. add, mul) in eine binäre Funktion umwandelt. demethodize(Number.prototype.add)(5, 6) soll 11 ergeben.",
+                    "Schreiben Sie eine Funktion twice(), die eine binäre Funktion in eine unäre Funktion umwandelt, die den einen Parameter zweimal weiter reicht. Z.B. var double = twice(add); double(11) soll 22 ergeben; var square = twice(mul); square(11) soll mul(11,11) === 121 ergeben.",
+                    "Schreiben Sie eine Funktion composeu(), die zwei unäre Funktionen in eine einzelne unäre Funktion transformiert, die beide nacheinander aufruft, z.B. soll composeu(double, square)(3) genau 36 ergeben.",
+                    "Schreiben Sie eine Funktion composeb(), die zwei binäre Funktionen in eine einzelne Funktion transformiert, die beide nacheinander aufruft, z.B. composeb(add, mul)(2, 3, 5) soll 25 ergeben.",
+                    "Schreiben Sie eine Funktion once(), die einer anderen Funktion nur einmal erlaubt, aufgerufen zu werden, z.B. add_once = once(add); add_once(3, 4) soll beim ersten Mal 7 ergeben, beim zweiten Mal soll jedoch add_once(3, 4) einen Fehlerabbruch bewirken.",
+                    "Schreiben Sie eine Fabrik-Funktion counterf(), die zwei Funktionen inc() und dec() berechnet, die einen Zähler hoch- und herunterzählen. Z.B. counter = counterf(10); Dann soll counter.inc() 11 und counter.dec() wieder 10 ergeben.",
+                    "Schreiben Sie eine rücknehmbare Funktion revocable(), die als Parameter eine Funktion nimmt und diese bei Aufruf ausführt. Sobald die Funktion aber mit revoke() zurück genommen wurde, führt ein erneuter Aufruf zu einem Fehler. Z.B.\ntemp = revocable(alert);\ntemp.invoke(7); // führt zu alert(7);\ntemp.revoke();\ntemp.invoke(8); // Fehlerabbruch!",
+                    "Implementieren Sie ein \"Array Wrapper\"-Objekt mit den Methoden get, store und append, so dass ein Angreifer keinen Zugriff auf das innere, private Array hat.\n\nmy_vector = vector();\nmy_vector.append(7);\nmy_vector.store(1, 8);\nmy_vector.get(0) // 7\nmy_vector.get(1) // 8"
+                ],
                 "pfad": "./src/uebung_6/uebung6_1.html"
             },
             {
                 "name": "uebung6_2.html",
                 "desc": "JavaScript - Funktionale Programmierung (Welches Wort kommt am häufigsten vor?)",
+                "tasks": [
+                    "Schreiben Sie in JavaScript eine Textanalyse. Ermitteln Sie die häufigsten Begriffe im Text <a href='https://kaul.inf.h-brs.de/we/assets/html/plagiatsresolution.html' target='_blank'>Plagiatsresolution</a>.",
+                    " Filtern Sie dabei alle Stoppworte und HTML-Tags. Reduzieren Sie das Ergebnis auf die 3 häufigsten Begriffe."
+                ],
                 "pfad": "./src/uebung_6/uebung6_2.html"
             }
         ]
     },
     "Woche 7": {
         "desc": "Liste aller Dateien zu Woche 7 zum Thema DOM",
+        "needsRendering": false,
+        "goals": [
+            "Browser-Architektur erklären können.",
+            "Grundlegenden Ablauf des Renderings erklären können.",
+            "Document Object Model (DOM)-Konzepte erklären können.",
+            "In JavaScript DOM-Abfragen programmieren können.",
+            "In JavaScript DOM-Manipulationen programmieren können.",
+            "Unterschiede zwischen innerHTML, innerText, textContent und outerHTML erklären können.",
+            "Performanzmessungen von DOM-Operationen durchführen können."
+        ],
         "files": [
             {
                 "name": "uebung7_1.html",
                 "desc": "JavaScript - Performanzmessungen",
+                "tasks": [
+                    "Implementieren Sie Performanzmessungen zum Vergleich von innerHTML, innerText, textContent und outerHTML selbstständig in JavaScript durch Nutzung der DOM API. Geben Sie die Messergebnisse als Tabelle aus. Verwenden Sie die eingebauten Zeitmess-Funktionen performance.now (), siehe auch When-milliseconds-are-not-enough-performance-now. Suchen Sie eine möglichst kurze und elegante Lösung.",
+                    "Dabei ist zu beachten, dass Browser, um potenzielle Sicherheitsbedrohungen wie Spectre oder Meltdown zu minimieren, den zurückgegebenen Wert normalerweise um einen bestimmten Betrag runden. Dies führt zu einer gewissen Ungenauigkeit. Beispielsweise rundet Firefox die zurückgegebene Zeit in Schritten von 1 Millisekunde. Diese Zwangsrundung kann man jedoch wiederum abschalten mittels Firefox setting privacy.reduceTimerPrecision, siehe How to get microsecond timings in JavaScript since Spectre and Meltdown."
+                ],
                 "pfad": "./src/uebung_7/uebung7_1.html"
             },
             {
                 "name": "uebung7_2.html",
                 "desc": "JavaScript - Rednerliste",
+                "tasks": [
+                    "Implementieren Sie die interaktive Anwendung \"Rednerliste mit Zeitmessung\" selbstständig in JavaScript durch Nutzung der DOM API und der Timer-Funktionen.",
+                    "Neue Redner sollen auf Knopfdruck hinzugefügt werden können.",
+                    "Deren Uhr wird dann sofort automatisch gestartet und alle anderen Uhren angehalten.",
+                    "Bei jedem Redner soll die individuelle, gemessene Redezeit sekundengenau angezeigt werden.",
+                    "Für jeden Redner soll es einen eigenen Start-/Stopp-Button geben. Es soll immer nur eine Uhr laufen.",
+                    "Angezeigt werden sollen die bisherigen Summenzeiten aller Redebeiträge der betreffenden Person.",
+                    "Suchen Sie eine möglichst kurze und elegante Lösung. Achten Sie gleichzeitig auf gute Usability: z.B. wenn die Eingabe mit einem Return beendet wird, soll der Button-Click nicht mehr erforderlich sein, usw."
+                ],
                 "pfad": "./src/uebung_7/uebung7_2.html"
             },
             {
                 "name": "functions.js",
                 "desc": "JavaScript zu Aufgabe 7.2",
+                "tasks": [
+                    "Hinweis: Aus Übersichtlichkeit wurde der Javascript-Code vom Rest des Dokuments getrennt"
+                ],
                 "pfad": "./src/uebung_7/functions.js"
             }
         ]
     },
     "Woche 8": {
         "desc": "Liste aller Dateien zu Woche 8 zum Thema JavaScript (Async)",
+        "needsRendering": false,
+        "goals": [
+            "Die Metamorphose des WWW erklären können.",
+            "Kategorienfehler des WWW erklären können.",
+            "Event Loop des Browsers erklären können.",
+            "Mit Ajax programmieren können.",
+            "Mit Promise programmieren können.",
+            "Mit async / await programmieren können.",
+            "Mit Events programmieren können.",
+            "Nebenläufige Worker programmieren können."
+        ],
         "files": [
             {
                 "name": "uebung8_1.html",
                 "desc": "JavaScript - Promises",
+                "tasks": [
+                    "Erstellen Sie auf Ihrem Server www2.inf.h-brs.de (oder localhost) zwei Text-Dateien A.txt und B.txt mit ungefähr gleich vielen Zeilen. Laden Sie mit der fetch-API parallel beide Text-Dateien vom Server.",
+                    "Geben Sie auf einer Webseite den Inhalt beider Dateien zeilenweise aus, wobei der Anfang der Zeile aus A.txt und das Ende aus B.txt stammen soll.",
+                    "Die beiden Dateien sollen also zeilenweise konkateniert werden.",
+                    "Erzielen Sie max. Geschwindigkeit durch maximale Parallelität.",
+                    "Achten Sie gleichzeitig auf Korrektheit. Verwenden Sie dabei ausschließlich die Promise API ohne async / await."
+                ],
                 "pfad": "./src/uebung_8/uebung8_1.html"
             },
             {
                 "name": "uebung8_2.html",
                 "desc": "JavaScript - Promises",
+                "tasks": [
+                    "Lösen Sie die letzte Aufgabe mit async / await statt Promise."
+                ],
                 "pfad": "./src/uebung_8/uebung8_2.html"
             },
             {
                 "name": "uebung8_3.html",
                 "desc": "Navigator",
+                "tasks": [
+                    "Schreiben Sie einen Navigator für die Fachbegriffe des WWW zu den Oberthemen HTML, CSS und JavaScript.",
+                    "Im Hauptmenü sollen diese 3 Oberthemen zur Auswahl stehen.",
+                    "Im Untermenü soll eine zugehörige Liste von Fachbegriffen zum jeweiligen ausgewählten Oberthema stehen.",
+                    "In der Mitte soll eine Dokumentation zum ausgewählten Fachbegriff erscheinen mit Hyperlinks zu den anderen Fachbegriffen.",
+                    "Mit dem Back-Button des Browsers soll ein Zurücksprung möglich sein.",
+                    "Schreiben Sie in HTML und CSS nur den responsiven Rahmen für einen solchen WWW-Navigator. Dabei können Sie auch ein schöneres Layout als das hier gezeigte erstellen. Die Inhalte sollen in einer JSON-Datei extern gelagert werden. Mit der fetch-API soll die JSON-Datei asynchron nicht-blockierend geladen werden, und zwar nur einmal, nicht mehrfach. (d.h. Sparen Sie Internet-Bandbreite.) Sobald die Inhalte angekommen sind, sollen sie im Browser auch sofort angezeigt werden.",
+                    "Fügen Sie selbst in die JSON-Datei zusätzliche Inhalte zu Themen der Vorlesung als Strings beispielhaft ein. Wenn Sie Inhalte aus fremden Quellen kopieren, so schreiben Sie bitte stets die Quelle als externe Ressource hinzu. Diese soll dann auf der rechten Seite im WWW-Navigator erscheinen."
+                ],
                 "pfad": "./src/uebung_8/uebung8_3.html"
             },
             {
                 "name": "A.txt",
                 "desc": "Testdatei für Aufgabe 8.1 und 8.2",
+                "tasks": [
+                    "Text aus Datei A auslesen..."
+                ],
                 "pfad": "./src/uebung_8/A.txt"
             },
             {
                 "name": "B.txt",
                 "desc": "Testdatei für Aufgabe 8.1 und 8.2",
+                "tasks": [
+                    "Text aus Datei B auslesen..."
+                ],
                 "pfad": "./src/uebung_8/B.txt"
             },
             {
                 "name": "content.json",
                 "desc": "Inhalte für Aufgabe 8.3 in JSON",
+                "tasks": [
+                    "Mit Inhalt angereicherte JSON-Datei"
+                ],
                 "pfad": "./src/uebung_8/content.json"
             },
             {
                 "name": "navigator.js",
                 "desc": "Funktionslogik für Aufgabe 8.3 (Navigator)",
+                "tasks": [
+                    "Implementierung der Logik"
+                ],
                 "pfad": "./src/uebung_8/navigator.js"
             },
             {
                 "name": "navigator.css",
                 "desc": "CSS Design für Aufgabe 8.3 (Navigator)",
+                "tasks": [
+                    "CSS-Datei mit dem Design des Navigators"
+                ],
                 "pfad": "./src/uebung_8/navigator.css"
             }
         ]
     },
     "Woche 9": {
         "desc": "Liste aller Dateien zu Woche 9 zum Thema Vue.js",
+        "needsRendering": false,
+        "goals": [
+            "Vue-Instanzen konfigurieren können",
+            "Vue-Komponenten schreiben können",
+            "Single File Vue Components erstellen können",
+            "Mit Vue SPAs erstellen können",
+            "In Vue SPAs Routing einbauen können",
+            "Mit Vuex State Management umsetzen können"
+        ],
         "files": [
             {
                 "name": "uebung9_1.html",
                 "desc": "Vue.js - Erste Komponente",
+                "tasks": [
+                    "Schreiben Sie eine Vue.js Single File Component mit einem Text-Eingabefeld und 3 Ausgabefeldern, in denen man während des Tippens sehen kann, (a) wie viele Buchstaben (b) wie viele Leerzeichen und (c) wie viele Worte man in das Text-Eingabefeld bereits eingegeben hat.",
+                    "Betten Sie Ihre Komponente in eine Webseite zweimal ein und testen Sie, ob beide Komponenten unabhängig voneinander sind."
+                ],
                 "pfad": "./src/uebung_9/uebung9_1.html"
             },
             {
                 "name": "uebung9_3.html",
                 "desc": "Vue.js - Navigator SPA (unvollständig)",
+                "tasks": [
+                    "Schreiben Sie Ihren WWW-Navigator als SPA in Vue.js",
+                    "Dokumentieren Sie Ihren Entscheidungsprozess: In welche Komponenten wollen Sie Ihre App zerlegen? Wie soll das State Management implementiert werden?"
+                ],
                 "pfad": "./src/uebung_9/uebung9_3.html"
             }
         ]
     },
     "Woche 10": {
         "desc": "Liste aller Dateien zu Woche 10 zum Thema PHP",
+        "needsRendering": false,
+        "goals": [
+            "PHP anwenden können.",
+            "Konzepte von PHP beschreiben können.",
+            "Server-seitige Skripte erstellen können.",
+            "In PHP programmieren können.",
+            "In PHP Registrierung und Login programmieren können.",
+            "Mit PHP Formular-Daten auf dem Server speichern können.",
+            "Singe-Page Application (SPA) mit PHP und .htaccess auf einem Apache-Server realisieren können."
+        ],
         "files": [
             {
                 "name": "index.html",
                 "desc": "Registrierung",
+                "tasks": [
+                    "Erstellen Sie mit PHP 5 auf www2.inf.h-brs.de ein Registrierungsformular. Speichern Sie die eingegebenen Daten persistent in einer Datei auf www2.inf.h-brs.de.",
+                    "Schreiben Sie Ihre PHP-Scripte so, dass es zu keinen Nebenläufigkeitsartefakten (z.B. Lost Update) kommen kann, egal wie viele Nutzer sich gleichzeitig registrieren."
+                ],
                 "pfad": "./src/uebung_10/index.html"
             },
             {
                 "name": "login.html",
                 "desc": "Anmeldung",
+                "tasks": [
+                    "Schreiben Sie eine sichere PHP-Lösung für Login, das die persistierten Registrierungsdaten aus der letzten Aufgabe nutzt."
+                ],
                 "pfad": "./src/uebung_10/login.html"
             },
             {
                 "name": "login.css",
                 "desc": "Design",
+                "tasks": [
+                    "Aufteilung der einzelnen Komponenten"
+                ],
                 "pfad": "./src/uebung_10/login.css"
             },
             {
                 "name": "content.php",
                 "desc": "Content",
+                "tasks": [
+                    "Aufteilung der einzelnen Komponenten"
+                ],
                 "pfad": "./src/uebung_10/content.html"
             },
             {
                 "name": "server.php",
                 "desc": "Bearbeitung von POST/GET Anfragen",
+                "tasks": [
+                    "Aufteilung der einzelnen Komponenten"
+                ],
                 "pfad": "./src/uebung_10/server.html"
             },
             {
                 "name": "logout.php",
                 "desc": "Abmeldung",
+                "tasks": [
+                    "Aufteilung der einzelnen Komponenten"
+                ],
                 "pfad": "./src/uebung_10/logout.html"
             }
         ]
     },
     "Notenverbesserungen": {
         "desc": "Videos für Notenverbesserungen",
+        "needsRendering": true,
+        "goals": [],
         "files": [
             {
-                "pfad": "./src/Notenverbesserungen/videos.html"
+                "pfad": "./src/Notenverbesserungen/videos.html",
+                "tasks": []
             }
         ]
     }

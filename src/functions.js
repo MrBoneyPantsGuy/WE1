@@ -18,6 +18,7 @@ main.forEach(item => item.addEventListener('click', async function() {
     const subtitle = d.getElementById("week");
     const subs = d.getElementById("files");
     const desc = d.getElementById("info");
+    const task = d.getElementById("task");
     let id = 0;
 
     // submenu
@@ -35,11 +36,15 @@ main.forEach(item => item.addEventListener('click', async function() {
     });
 
     // set the description and remove prior src code
-    desc.innerHTML = "<span class='content-title'>"+ data[week].desc+"</span>";
+    desc.innerHTML = "<span class='content-title'>"+ data[week].desc+"<a class='invisible'>0</a></span>";
     desc.style.display = "inline";
 
-    // Exceptions for Register/Login/Logout
-    if(week === "Registrieren" || week === "Anmelden" || week === "Abmelden" || week === "Home" || week === "Notenverbesserungen") {
+    // set the goals for each maintab
+    task.innerHTML = createList("Lernziele:", data[week].goals);
+    task.style.display = "inline";
+
+    // Check if we need to render content or just dislay it as innerText()
+    if(data[week].needsRendering === true) {
         const render = readyForRender();
         if(week === "Home" || week === "Notenverbesserungen") {
             d.getElementById("code-container").innerHTML = await fetch(data[week].files[0].pfad).then(res => res.text());
@@ -47,6 +52,7 @@ main.forEach(item => item.addEventListener('click', async function() {
             d.getElementById("code-container").innerHTML = "<h2>Füge gerenderte " + week + "-PHP-Seite hier ein...</h2>";
         }
         d.getElementById("sub-menu").style.display = "none";
+        task.style.display = "none";
     } else {
         const code = readyForCode();
         d.getElementById("code").innerText = "";
@@ -59,8 +65,17 @@ main.forEach(item => item.addEventListener('click', async function() {
             const filepath = data[week].files[sub.id].pfad;
             d.getElementById("code").innerText = await fetch(filepath).then(res => res.text());
             desc.innerHTML = "<span class='content-title'>" + data[week].files[sub.id].desc + "</span><a class='renderbutton' href='"+ data[week].files[sub.id].pfad +"' target='_blank'>In Aktion anzeigen!</a>";
+            task.innerHTML = createList("Aufgabenstellung:", data[week].files[sub.id].tasks);
         }));
 }));
+
+// make an unordered list with passed items
+const createList = (title, jsonArray) => {
+    let list = title + "<ul>";
+    jsonArray.forEach(element => list += "<li>" + element + "</li>");
+    list += "</ul>";
+    return list;
+}
 
 // switches the content area from displaying code to actually render to fetched data by removing <pre> and <code>
 const readyForRender = function () {
