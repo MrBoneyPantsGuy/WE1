@@ -30,11 +30,11 @@
             <a class="navigateMain">Notenverbesserungen</a>
             <a class="navigateMain">Bonus</a>
             <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                <a class="navigateMain">Abmelden</a>
-                <a href="./src/uebung_10/content.php" target="_blank">Profil</a>
+                <a class="navigateMain adjust-float">Abmelden</a>
+                <a class="adjust-float" href="./src/uebung_10/content.php" target="_blank">Profil</a>
             <?php } else { ?>
-                <a class="navigateMain">Anmelden</a>
-                <a class="navigateMain">Registrieren</a>
+                <a class="navigateMain adjust-float">Anmelden</a>
+                <a class="navigateMain adjust-float">Registrieren</a>
             <?php } ?>
             <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i>

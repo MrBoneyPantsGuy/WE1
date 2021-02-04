@@ -208,6 +208,16 @@ ul.menu li a.active {
     .toggle {
         display: block;
     }
+
+    .adjust-float {
+        float: right !important;
+    }
+}
+
+@media screen and (max-width: 1600px) {
+    .adjust-float {
+        float: left !important;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -264,5 +274,9 @@ ul.menu li a.active {
 
     #sub-menu h3 {
         margin: 0;
+    }
+
+    .adjust-float {
+        float: none !important;
     }
 }

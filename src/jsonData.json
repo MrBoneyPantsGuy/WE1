@@ -30,12 +30,18 @@
     "Bonus": {
         "desc": "Bonus - Snake",
         "needsRendering": false,
-        "goals": [],
+        "goals": [
+            "Mehrere Vue Komponenten kombinieren können"
+        ],
         "files": [
             {
                 "name": "Snake",
                 "desc": "Snake mit Vue.js",
-                "tasks": [],
+                "tasks": [
+                    "Eigens gestellte Aufgabe: Programmierung von Snake als Vue.js Komponente zum besseren Verständnis von Vue, den Direktiven, seinem Event-Handling und dem Austauschen von Variablen/Props unter den einzelnen Komponenten.",
+                    "Der Quellcode kann in den beiden anderen gelisteten Dateien App.vue und Snake.vue eingesehen werden.",
+                    "Zum Ausführen 'In Aktion anzeigen'-Button betätigen."
+                ],
                 "pfad": "./src/games/snake/"
             },
             {
@@ -622,7 +628,7 @@
         "goals": [],
         "files": [
             {
-                "pfad": "./src/Notenverbesserungen/videos.html",
+                "pfad": "./src/notenverbesserungen/videos.html",
                 "tasks": []
             }
         ]
