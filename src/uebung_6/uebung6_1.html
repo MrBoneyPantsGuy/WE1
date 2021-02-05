@@ -5,6 +5,7 @@
     <title>Too many functions</title>
 </head>
 <body>
+<h1>Diese Datei enthält ausschließlich JavaScript-Code, welcher selbst in der Console keinen Output erzeugt.</h1>
 <script>
     // 1. identity_function
     const identity = x => x;
@@ -99,14 +100,14 @@
         let revoked = false;
         return ({invoke: x => revoked ? new Error("Function was revoked!") : f(x), revoke: () => revoked = true});
     }
-    let temp = revocable(alert);
-    //temp.invoke(7) // führt zu alert(7);
-    //temp.revoke();
-    //console.assert(temp.invoke(8) == "Error: Function was revoked!" ); // Fehlerabbruch!
+    let temp = revocable(console.log);
+    temp.invoke(7) // führt zu console.log(7);
+    temp.revoke();
+    console.assert(temp.invoke(8) == "Error: Function was revoked!" ); // Fehlerabbruch!
 
     // 14. Wrapper
-    const vector  = x => ({ get: index => x[index], append: element => x.push(element), store: (index, element) => x[index] = element });
-    my_vector = vector([]); // ohne Übergabe eines leeren Arrays tritt ein Fehler auf
+    const vector  = (x = []) => ({ get: index => x[index], append: element => x.push(element), store: (index, element) => x[index] = element });
+    my_vector = vector();
     my_vector.append(7);
     my_vector.store(1, 8);
     console.assert(my_vector.get(0) === 7);

@@ -47,13 +47,17 @@
             {
                 "name": "App.vue",
                 "desc": "Startkomponente",
-                "tasks": [],
-                "pfad": "./src/games/snake/app.vue"
+                "tasks": [
+                    "Initialisiert die Vue Instanz und bindet die eigentliche Snake Komponente ein und koordiniert den Start bzw. das Ende des Spiels, sowie die Punkte."
+                ],
+                "pfad": "./src/games/snake/App.vue"
             },
             {
                 "name": "Snake.vue",
                 "desc": "Unterkomponente",
-                "tasks": [],
+                "tasks": [
+                    "Beinhaltet alle spielrelevanten Daten und Funktionen"
+                ],
                 "pfad": "./src/games/snake/Snake.vue"
             }
         ]

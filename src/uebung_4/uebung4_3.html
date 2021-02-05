@@ -5,46 +5,47 @@
     <title>Uebung 4.3</title>
 </head>
 <body>
-<script>
-    // Variablen
-    let fibonacci_numbers = {};
-    let LAST_SAFE_FIBONACCI = 0;
-    let LAST_SAFE_MAXVALUE = 0;
+    <h1>Diese Datei enhält ausschließlich JavaScript-Code. Für die Ergebnisse bitte die Konsole in den Entwicklertools öffnen.</h1>
+    <script>
+        // Variablen
+        let fibonacci_numbers = {};
+        let LAST_SAFE_FIBONACCI = 0;
+        let LAST_SAFE_MAXVALUE = 0;
 
-    // Fibonacci-Funktion mit expliziter Berechnung in O(1) liefert relativ schnell falsche Zahlen aufgrund von Rundungsfehlern
-    function fibonacci_explizit(n) {
-        return (Math.round((1/Math.sqrt(5)) * (Math.pow(((1 + Math.sqrt(5)) / 2), n) - (Math.pow(((1 - Math.sqrt(5)) / 2), n)))));
-    }
-
-    // Lineare Fibonacci-Funktion mit O(1)
-    function fibonacci_folge(n) {
-        if(n < 3) {
-            return 1n;
-        } else {
-            return fibonacci_numbers[n-2] + fibonacci_numbers[n-1];
-        }
-    }
-
-    // Dritte Möglichkeit wäre per Rekursion, hier is aber die Laufzeit deutlich schlechter aufgrund von Mehrfachberechnungen
-
-    // Schleife für die ersten 2000 Fibonacci-Zahlen
-    for(let i=1; i<=25000; i++) {
-        fibonacci_numbers[i] = fibonacci_folge(i);
-
-        if(fibonacci_numbers[i] < Number.MAX_SAFE_INTEGER) {
-            LAST_SAFE_FIBONACCI = i;
-        }
-        if(fibonacci_numbers[i] < Number.MAX_VALUE) {
-            LAST_SAFE_MAXVALUE = i;
+        // Fibonacci-Funktion mit expliziter Berechnung in O(1) liefert relativ schnell falsche Zahlen aufgrund von Rundungsfehlern
+        function fibonacci_explizit(n) {
+            return (Math.round((1/Math.sqrt(5)) * (Math.pow(((1 + Math.sqrt(5)) / 2), n) - (Math.pow(((1 - Math.sqrt(5)) / 2), n)))));
         }
 
-        //console.log(fibonacci_numbers[i]);
-        console.log(i + ": " + fibonacci_numbers[i]);
-    }
+        // Lineare Fibonacci-Funktion mit O(1)
+        function fibonacci_folge(n) {
+            if(n < 3) {
+                return 1n;
+            } else {
+                return fibonacci_numbers[n-2] + fibonacci_numbers[n-1];
+            }
+        }
 
-    // Ausgabe der Ergebnisse
-    console.log(LAST_SAFE_FIBONACCI +": "+ fibonacci_numbers[LAST_SAFE_FIBONACCI])
-    console.log(LAST_SAFE_MAXVALUE +": "+ fibonacci_numbers[LAST_SAFE_MAXVALUE])
-</script>
+        // Dritte Möglichkeit wäre per Rekursion, hier is aber die Laufzeit deutlich schlechter aufgrund von Mehrfachberechnungen
+
+        // Schleife für die ersten 2000 Fibonacci-Zahlen
+        for(let i=1; i<=25000; i++) {
+            fibonacci_numbers[i] = fibonacci_folge(i);
+
+            if(fibonacci_numbers[i] < Number.MAX_SAFE_INTEGER) {
+                LAST_SAFE_FIBONACCI = i;
+            }
+            if(fibonacci_numbers[i] < Number.MAX_VALUE) {
+                LAST_SAFE_MAXVALUE = i;
+            }
+
+            //console.log(fibonacci_numbers[i]);
+            console.log(i + ": " + fibonacci_numbers[i]);
+        }
+
+        // Ausgabe der Ergebnisse
+        console.log(LAST_SAFE_FIBONACCI +": "+ fibonacci_numbers[LAST_SAFE_FIBONACCI])
+        console.log(LAST_SAFE_MAXVALUE +": "+ fibonacci_numbers[LAST_SAFE_MAXVALUE])
+    </script>
 </body>
 </html>

@@ -6,17 +6,19 @@
 </head>
 <body>
     <div id="content"></div>
+    <hr>
+    <h1>Die häufigsten drei Wörter sind:</h1>
+    <ol id="words">
+
+    </ol>
 </body>
 <script>
     "use strict";
 
     async function getData() {
-        let url = 'plagiatsresolution.html'; // fetched from local file in the same directory as the script
-        let response = await fetch(url);
-        let reponseText = await response.text();
-
-        document.getElementById("content").innerHTML = reponseText; // display HTML structure on screen inside content area
-        return reponseText;
+        let response = await fetch('plagiatsresolution.html').then(res => res.text());
+        document.getElementById("content").innerHTML = response; // display HTML structure on screen inside content area
+        return response;
     }
 
     function removeTags(str) {
@@ -46,7 +48,14 @@
                     wordCounter[element] = wordCounter[element] ? wordCounter[element] + 1 : 1;
                 });
         let words = mostOccurence(wordCounter);                 // sort words ascending
-        console.log(Object.values(words).slice(Object.values(wordCounter).length-3)); // return the last 3 elements of most occurring words
+
+        // display most occuring words
+        Object.values((words).slice(Object.values(wordCounter).length-3)).reverse().forEach(word => {
+            let list = document.getElementById("words");
+            let entry = document.createElement("li");
+            entry.appendChild(document.createTextNode(word));
+            list.appendChild(entry)
+        })
     })();
 
 </script>

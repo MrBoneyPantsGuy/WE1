@@ -8,7 +8,6 @@ const getJsonData = async function() {
 }
 const jsonData = getJsonData();
 
-
 // listen to all clicks on the main menu
 const main = document.querySelectorAll(".navigateMain");
 main.forEach(item => item.addEventListener('click', async function() {

@@ -11,7 +11,9 @@
         session_start();
         if(isset($_SESSION['login']) && $_SESSION['login'] == true) {
             echo "<p>This is the Members only area!</p>";
-        ?>
+        if(isset($_SESSION['user'])) {
+          echo $_SESSION['user'];
+        } ?>
         <form method="post" action="logout.php">
             <input type="submit" value="Logout">
         </form>

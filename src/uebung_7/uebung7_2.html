@@ -1,9 +1,23 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
     <meta charset="UTF-8">
     <title>Rednerliste</title>
     <style>
+        body {
+            background: darkgrey;
+        }
+
+        #app-container {
+            border: 2px solid darkslateblue;
+            border-radius: 15px;
+            padding: 1em;
+            margin-left: auto;
+            margin-right: auto;
+            width: 500px;
+            background: lightskyblue;
+        }
+
         #list-container ul li name, time {
             margin-right: 0.5em;
             margin-left: 0.5em;
@@ -19,15 +33,17 @@
     </style>
 </head>
 <body>
-    <h1>Rednerliste</h1>
-    <div id="input-container">
-        <label for="newPerson">Neuer Redner:</label>
-        <input type="text" id="newPerson" placeholder="Name des Redners">
-        <input type="button" id="add" value="Hinzufügen">
-    </div>
-    <ul id="list">
+    <div id="app-container">
+        <h1>Rednerliste</h1>
+        <div id="input-container">
+            <label for="newPerson">Neuer Redner:</label>
+            <input type="text" id="newPerson" placeholder="Name des Redners">
+            <input type="button" id="add" value="Hinzufügen">
+        </div>
+        <ul id="list">
 
-    </ul>
+        </ul>
+    </div>
 </body>
 <script src="functions.js"></script>
 </html>
