@@ -18,12 +18,13 @@
         </div>
         <button id="submit" class="btn btn-primary btn-block btn-large">Register now!</button>
         <p class="link">Already registered? <a href="./login.html">Click here</a></p>
+        <p id="error" class="link"></p>
     </div>
 </body>
 <script>
     const submit = document.getElementById('submit');
-    submit.addEventListener('click', function(event) {
-        fetch(new Request("./server.php"), {
+    submit.addEventListener('click', async function(event) {
+        const register = await fetch(new Request("./server.php"), {
             method: 'POST',
             mode: 'cors',
             cache: 'no-store',
@@ -35,9 +36,16 @@
             headers: {
                 'Content-Type': 'application/json'
             }
-        });
-        setTimeout( function() { alert("Registration complete!"); }, 500);
-        setTimeout( function() { window.location = 'login.html'}, 500);
+        }).then(res => res.text()).then(msg => msg.substring(1, msg.length -1));
+
+        if(register === "Username already taken!") {
+            let result = document.getElementById('error');
+            result.innerText = register;
+            setTimeout(function() { result.innerText = ""}, 2000);
+        } else {
+            setTimeout( function() { alert("Registration complete!"); }, 500);
+            setTimeout( function() { window.location = 'login.html'}, 500);
+        }
     });
 </script>
 </html>

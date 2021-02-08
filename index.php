@@ -1,6 +1,5 @@
 <?php
     session_start();
-    $_SESSION['user'] = "Peter Platzhalter";
 ?>
 
 <!doctype html>
@@ -30,13 +29,13 @@
             <a class="navigateMain">Notenverbesserungen</a>
             <a class="navigateMain">Bonus</a>
             <?php if(isset($_SESSION['login']) && $_SESSION['login'] == true) { ?>
-                <a class="navigateMain adjust-float">Abmelden</a>
-                <a class="adjust-float" href="./src/uebung_10/content.php" target="_blank">Profil</a>
+                <a class="adjust-float" href="./src/pages/logout.php">Abmelden</a>
+                <a class="navigateMain adjust-float">Profil</a>
             <?php } else { ?>
-                <a class="navigateMain adjust-float">Anmelden</a>
-                <a class="navigateMain adjust-float">Registrieren</a>
+                <a class="navigateMain adjust-float" id="loginentry">Anmelden</a>
+                <a class="navigateMain adjust-float" id="registerentry">Registrieren</a>
             <?php } ?>
-            <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+            <a href="javascript:void(0);" class="icon" id="toggle-icon" onclick="toggleMenu()">
                 <i class="fa fa-bars"></i>
             </a>
         </nav>

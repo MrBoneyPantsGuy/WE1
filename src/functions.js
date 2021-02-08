@@ -18,6 +18,7 @@ main.forEach(item => item.addEventListener('click', async function() {
     const subs = d.getElementById("files");
     const desc = d.getElementById("info");
     const task = d.getElementById("task");
+    const login = d.getElementById("")
     let id = 0;
 
     // submenu
@@ -42,10 +43,15 @@ main.forEach(item => item.addEventListener('click', async function() {
     task.innerHTML = createList("Lernziele:", data[week].goals);
     task.style.display = "inline";
 
-    // Check if we need to render content or just dislay it as innerText()
+    // auto close menu on mobile devices after item was clicked
+    if(week !== "Home" || d.getElementById("main-menu").classList.contains("responsive")) {
+        const toggle = toggleMenu();
+    }
+
+    // Check if we need to render content or just display it as innerText()
     if(data[week].needsRendering === true) {
         const render = readyForRender();
-        if(week === "Home" || week === "Notenverbesserungen") {
+        if(week === "Home" || week === "Notenverbesserungen" || week === "Registrieren" || week === "Anmelden" || week === "Profil") {
             d.getElementById("code-container").innerHTML = await fetch(data[week].files[0].pfad).then(res => res.text());
         } else {
             d.getElementById("code-container").innerHTML = "<h2>Füge gerenderte " + week + "-PHP-Seite hier ein...</h2>";
@@ -111,6 +117,61 @@ function toggleMenu() {
         x.className += " responsive";
     } else {
         x.className = "menu";
+    }
+}
+
+async function postData(type) {
+    const submit = document.getElementById('submit');
+
+    if(type === "register") {
+        let register = await fetch(new Request("./src/uebung_10/server.php"), {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-store',
+            body: JSON.stringify(Array.from(document.querySelectorAll('.collect'))
+                .reduce((json, input_field) => {
+                    json[input_field.id] = input_field.value;
+                    return json;
+                }, {})),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            // weird string filtering cause of echo'ed errors/warning/deprecated
+        }).then(res => res.text()).then(msg => msg.substring(msg.length - 25)).then(sub => sub.replaceAll('"', ""));
+
+        if(register === "Username already taken!") {
+            let result = document.getElementById('error');
+            result.innerText = register;
+            setTimeout(function() { result.innerText = ""}, 2000);
+        } else {
+            let result = document.getElementById('error');
+            result.innerText = "Registration complete!";
+            setTimeout(function() { result.innerText = ""}, 2000);
+            d.getElementById("loginentry").click();
+        }
+    } else if(type === "login") {
+        let login = await fetch(new Request("./src/uebung_10/server.php"), {
+            method: 'POST',
+            mode: 'cors',
+            cache: 'no-store',
+            body: JSON.stringify(Array.from(document.querySelectorAll('.collect'))
+                .reduce((json, input_field) => {
+                    json[input_field.id] = input_field.value;
+                    return json;
+                }, {})),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+            // weird string filtering cause of echo'ed errors/warning/deprecated
+        }).then(res => res.text()).then(text => text.substring(text.length - 4));
+
+        if(login === "true") {
+            location.reload();
+        } else {
+            let result = d.getElementById('error');
+            result.innerText = "Username or Password incorrect!";
+            setTimeout(function() { result.innerText = ""}, 2000);
+        }
     }
 }
 

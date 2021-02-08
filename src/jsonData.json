@@ -5,7 +5,7 @@
         "goals": [],
         "files": [
             {
-                "pfad": "./src/home.html"
+                "pfad": "./src/pages/home.html"
             }
         ]
     },
@@ -13,7 +13,11 @@
         "desc": "Anmelden",
         "needsRendering": true,
         "goals": [],
-        "files": []
+        "files": [
+            {
+                "pfad":"./src/pages/login.html"
+            }
+        ]
     },
     "Abmelden": {
         "desc": "Abmelden",
@@ -25,7 +29,21 @@
         "desc": "Registrierung",
         "needsRendering": true,
         "goals": [],
-        "files": []
+        "files": [
+            {
+                "pfad": "./src/pages/register.html"
+            }
+        ]
+    },
+    "Profil": {
+        "desc": "Nutzerdaten",
+        "needsRendering": true,
+        "goals": [],
+        "files": [
+            {
+                "pfad": "./src/pages/profile.php"
+            }
+        ]
     },
     "Bonus": {
         "desc": "Bonus - Snake",
