@@ -6,7 +6,7 @@
         "https://developer.mozilla.org/de/docs/Web/HTML/Element/h1-h6"
       ]
     },
-    "HTML5 Tags": {
+    "HTML5-Tags": {
       "content": "Mit HTML5 wurden einige neue standardisierte Tags innerhalb HTML eingeführt. Darunter beispielsweise <section>, <nav>, <footer> oder gar Tags für eingebettete Inhalte wie <video>, <audio> oder <map>.",
       "references": [
         "https://developer.mozilla.org/de/docs/Web/HTML/HTML5/HTML5_element_list"

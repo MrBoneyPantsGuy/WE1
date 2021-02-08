@@ -257,7 +257,7 @@
             },
             {
                 "name": "uebung4_2.html",
-                "desc": "JavaScript - Prototypen",
+                "desc": "JavaScript - Prototypen (unvollständig)",
                 "tasks": [
                     "Schreiben Sie die Prototypen Person und Auto in JavaScript, so dass jede Person weiß, welche Autos sie besitzt. Schreiben Sie eine Funktion conflict(), die feststellt, ob ein Auto von mehr als einer Person besessen wird."
                 ],

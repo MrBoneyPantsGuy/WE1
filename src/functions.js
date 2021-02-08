@@ -18,7 +18,6 @@ main.forEach(item => item.addEventListener('click', async function() {
     const subs = d.getElementById("files");
     const desc = d.getElementById("info");
     const task = d.getElementById("task");
-    const login = d.getElementById("")
     let id = 0;
 
     // submenu
@@ -41,7 +40,6 @@ main.forEach(item => item.addEventListener('click', async function() {
 
     // set the goals for each maintab
     task.innerHTML = createList("Lernziele:", data[week].goals);
-    task.style.display = "inline";
 
     // auto close menu on mobile devices after item was clicked
     if(week !== "Home" || d.getElementById("main-menu").classList.contains("responsive")) {
@@ -51,17 +49,14 @@ main.forEach(item => item.addEventListener('click', async function() {
     // Check if we need to render content or just display it as innerText()
     if(data[week].needsRendering === true) {
         const render = readyForRender();
-        if(week === "Home" || week === "Notenverbesserungen" || week === "Registrieren" || week === "Anmelden" || week === "Profil") {
-            d.getElementById("code-container").innerHTML = await fetch(data[week].files[0].pfad).then(res => res.text());
-        } else {
-            d.getElementById("code-container").innerHTML = "<h2>Füge gerenderte " + week + "-PHP-Seite hier ein...</h2>";
-        }
+        d.getElementById("code-container").innerHTML = await fetch(data[week].files[0].pfad).then(res => res.text());
         d.getElementById("sub-menu").style.display = "none";
         task.style.display = "none";
     } else {
         const code = readyForCode();
         d.getElementById("code").innerText = "";
         d.getElementById("sub-menu").style.display = "block";
+        task.style.display = "inline";
     }
 
     // select all elements in the submenu and add the eventlistener to fetch the corresponding data
@@ -124,6 +119,7 @@ async function postData(type) {
     const submit = document.getElementById('submit');
 
     if(type === "register") {
+        // Fremdleistung aus Vorlesung: https://kaul.inf.h-brs.de/we/#app-content-11-0&10_php=page-57
         let register = await fetch(new Request("./src/uebung_10/server.php"), {
             method: 'POST',
             mode: 'cors',
@@ -150,6 +146,7 @@ async function postData(type) {
             d.getElementById("loginentry").click();
         }
     } else if(type === "login") {
+        // Fremdleistung aus Vorlesung: https://kaul.inf.h-brs.de/we/#app-content-11-0&10_php=page-57
         let login = await fetch(new Request("./src/uebung_10/server.php"), {
             method: 'POST',
             mode: 'cors',
